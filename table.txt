@@ -1,0 +1,44 @@
+ログインのための名前
+ログインのためのパスワード
+表示される名前
+表示されないユーザの年齢
+表示されないユーザの性別
+表示されないユーザの電話番号
+
+create table user_table(
+	login_name varchar2(20),
+	login_pass varchar2(20),
+	user_name varchar2(20),
+	user_old varchar2(3),
+	user_sex varchar2(2),
+	user_tel varchar2(15)
+);
+
+スレッドの名前
+データベースのテーブルの名前 thread_form
+スレッドのテーマ
+スレッドの総アクセス数
+スレッドの作成者 user_name
+
+create table thread_list(
+	thread_name varchar2(15),
+	table_name varchar2(20),
+	thread_theme varchar2(15),
+	thread_count varchar2(10),
+	thread_author varchar2(20) 
+);
+
+レスの番号
+レスの投稿者　user_name
+レスのタイトル
+レスの本文
+いいね
+
+create table thread_form1(
+	thread_no varchar2(4),
+	user_name varchar2(20),
+	thread_title varchar2(200),
+	thread_text varchar2(2000),
+	likes varchar2(100000)
+);
+
