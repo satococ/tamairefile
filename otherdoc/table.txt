@@ -39,10 +39,10 @@ create table thread_list(
 いいね
 
 create table thread_form1(
-	thread_no varchar2(4),
+	res_no varchar2(4),
 	user_name varchar2(20),
-	thread_title varchar2(200),
-	thread_text varchar2(2000),
+	res_title varchar2(200),
+	res_text varchar2(2000),
 	likes varchar2(100000)
 );
 
