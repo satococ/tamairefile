@@ -1,48 +1,35 @@
 ﻿
-(ログインのためのテーブル)
-ログインのための名前
-ログインのためのパスワード
-表示される名前
-表示されないユーザの年齢
-表示されないユーザの性別
-表示されないユーザの電話番号
 
-create table user_table(
-	login_name varchar2(20),
-	login_pass varchar2(20),
-	user_name varchar2(20),
-	user_old varchar2(3),
-	user_sex varchar2(2),
-	user_tel varchar2(15)
+sqlplus /nolog
+
+connect tuser/pass
+
+
+ログインのためのユーザ情報テーブル
+
+CREATE TABLE USER_INFO(
+ user_no 		NUMBER(5) 		PRIMARY KEY
+,login_name 	VARCHAR2(20) 	UNIQUE,
+            					NOT NULL
+,login_pass 	VARCHAR2(16) 	NOT NULL,
+  								/*  CHECK(login_pass )  HTMLのminlength使う*/
+,user_name 		VARCHAR2(20) 	UNIOUE,
+								NOT NULL
 );
 
-(スレッド一覧のテーブル)
-スレッドの名前
-データベースのテーブルの名前 thread_form
-スレッドのテーマ
-スレッドの総アクセス数
-スレッドの作成者 user_name
-
-create table thread_list(
-	thread_name varchar2(15),
-	table_name varchar2(20),
-	thread_theme varchar2(15),
-	thread_count varchar2(10),
-	thread_author varchar2(20) 
+CREATE TABLE THREAD_TABLE(
+ thread_id 				NUMBER(8) 		PRIMARY KEY
+,thread_name 			VARCHAR2(100) 	NOT NULL,
+										UNIQUE,
+										/*  CHECK(thread_name )  HTMLのminlength使う*/
+,thread_last_updated 	VARCHAR2(50) 	DEFAULT sysdate
+,thread_date 			VARCHAR2(50) 	DEFAULT sysdate
+,thread_theme 			VARCHAR2(20) 	NOT NULL,
+ 										FOREIGN KEY theme_table(theme_attribute)
+,thread_description 	VARCHAR2(200)
+,thread_count 			NUMBER(9) 		NOT NULL,
+ 										DEFAULT 0
 );
 
-(個々のスレッドのテーブル)
-レスの番号
-レスの投稿者　user_name
-レスのタイトル
-レスの本文
-いいね
-
-create table thread_form1(
-	res_no varchar2(4),
-	user_name varchar2(20),
-	res_title varchar2(200),
-	res_text varchar2(2000),
-	likes varchar2(100000)
-);
-
+CREATE TABLE RES_TABLE(
+ 
