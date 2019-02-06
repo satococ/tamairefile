@@ -1,0 +1,6 @@
+	private String threadno; res_identityno 2
+	private String name; res_user_name 4
+	private String date; res_date 5
+	private STring title; res_titile 6
+	private String text; res_text 7
+	private int likes; res_likes 8
