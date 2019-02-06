@@ -25,11 +25,24 @@ CREATE TABLE THREAD_TABLE(
 ,thread_last_updated 	VARCHAR2(50) 	DEFAULT sysdate
 ,thread_date 			VARCHAR2(50) 	DEFAULT sysdate
 ,thread_theme 			VARCHAR2(20) 	NOT NULL,
- 										FOREIGN KEY theme_table(theme_attribute)
+ 										REFERENCES theme_table(theme_attribute)
 ,thread_description 	VARCHAR2(200)
 ,thread_count 			NUMBER(9) 		NOT NULL,
  										DEFAULT 0
 );
 
 CREATE TABLE RES_TABLE(
- 
+ res_no 				NUMBER(6) 		PRIMARY KEY
+,res_identityno 		NUMBER(4) 		/* CHECK()   */
+,res_thread_id 			NUMBER(8) 		REFERENCES thread_table(thread_id)
+,res_user_name 			VARCHAR2(20) 	REFERENCES user_table(user_name)
+,res_date 				VARCHAR2 		DEFAULT sysdate
+,res_title 				VARCHAR2(20)
+,res_text 				VARCHAR2(2048)  NOT NULL
+,res_likes 				NUMBER(8)       DEFAULT 0
+);
+
+CREATE TABLE THEME_TABLE(
+ theme_attribute 		VARCHAR2(20) 	PRIMARY KEY
+,theme_detail 			VARCHAR2(50) 	NOT NULL
+);
