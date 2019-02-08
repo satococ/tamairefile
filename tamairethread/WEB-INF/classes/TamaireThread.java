@@ -13,17 +13,19 @@ public class TamaireThread extends HttpServlet{
 		//文字コード固定
 		req.setCharacterEncoding("Windows-31J");
 		
-		String name = req.getParameter("name");
-		String pass = req.getParameter("pass");
+		
+		//String threadid = req.getParameter("threadid");
+		String username = req.getParameter("username");
+		String title = req.getParameter("title");
+		String text = req.getParameter("text");
 			//データベースに書き込む
-		InsertTest.insertUser_Table(name,pass);
+		InsertTest.insertUser_Table(username, title, text);
 	
 	//データベースからリストをもらう
-		List<Profile> pLIst = getList();
+		List<Profile> pLIst = QueryTest.getQueryList();
 		
 		
 	//パラメータをJSPに投稿する
-
 		
 		req.setAttribute("users",pLIst);
 		

@@ -10,7 +10,7 @@ public class InsertTest{
 		InsertTest.insertUser_Table(args[0],args[1]);
 	}
 	
-	public static int insertUser_Table(String userName,String passWord){
+	public static int insertUser_Table(String userName,String title, String text){
 		int count = 0; //処理した行数を入れるための変数
 		try{
 			//Driverインターフェイスを実装するクラスをロードする

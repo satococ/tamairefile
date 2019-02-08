@@ -11,7 +11,7 @@ import info.resProfile;
 
 public class QueryTest{
 	
-	public static List<resProfile> getQueryList(){
+	public static List<resProfile> getQueryList(int id){
 		
 		List<resProfile> userList = new ArrayList<resProfile>();
 	
@@ -25,9 +25,9 @@ public class QueryTest{
 			System.out.println("接続完了");
 			
 			//select文
-			String sql="select username, res_user_name,
+			String sql="select res_identityno, res_user_name,
 			res_date, res_titile,res_text,res_likes
-			from res_table";
+			from res_table WHERE res_thread_id = '"+id+"'";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -42,11 +42,11 @@ public class QueryTest{
 				resProfile prof = new resProfile();
 				
 				String threadno = rs.getString(1);	//1列目のデータを取得
-				String name = rs.getString(2);	//1列目のデータを取得
-				String date = rs.getString(3);	//2列目のデータを取得
-				String title = rs.getString(4);	//1列目のデータを取得
-				String text = rs.getString(5);	//2列目のデータを取得
-				String likes = rs.getString(6);	//1列目のデータを取得
+				String name = rs.getString(2);		//2列目のデータを取得
+				String date = rs.getString(3);		//3列目のデータを取得
+				String title = rs.getString(4);		//4列目のデータを取得
+				String text = rs.getString(5);		//5列目のデータを取得
+				String likes = rs.getString(6);		//6列目のデータを取得
 				prof.setThreadno(threadno);
 				prof.setDate(name);
 				prof.setThreadno(date);

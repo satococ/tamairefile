@@ -9,7 +9,7 @@ public class resProfile{
 	private int likes;
 	
 	public void setThreadno(String threadno){
-		this.threadid=threadno;
+		this.threadno=threadno;
 	}
 	public String getthreadno(){
 		return threadno;
