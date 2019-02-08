@@ -4,7 +4,7 @@ public class resProfile{
 	private String threadno;
 	private String name;
 	private String date;
-	private STring title;
+	private String title;
 	private String text;
 	private int likes;
 	

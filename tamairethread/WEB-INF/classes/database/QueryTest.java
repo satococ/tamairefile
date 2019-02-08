@@ -41,15 +41,19 @@ public class QueryTest{
 			while(rs.next()){
 				resProfile prof = new resProfile();
 				
-				String threadname = rs.getString(1);	//1列目のデータを取得
+				String threadno = rs.getString(1);	//1列目のデータを取得
 				String name = rs.getString(2);	//1列目のデータを取得
 				String date = rs.getString(3);	//2列目のデータを取得
 				String title = rs.getString(4);	//1列目のデータを取得
 				String text = rs.getString(5);	//2列目のデータを取得
 				String likes = rs.getString(6);	//1列目のデータを取得
-				String pass = rs.getString(7);	//2列目のデータを取得
-				prof.setName(name);
-				prof.setPass(pass);
+				prof.setThreadno(threadno);
+				prof.setDate(name);
+				prof.setThreadno(date);
+				prof.setDate(title);
+				prof.setThreadno(text);
+				prof.setDate(likes);
+				
 				
 				userList.add(prof);
 				
