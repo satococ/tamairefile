@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
 import java.util.ArrayList;
-import info.Profile;
+import info.resProfile;
 
 public class QueryTest{
 	
@@ -39,10 +39,15 @@ public class QueryTest{
 
 			//カーソルを一行だけスクロールし、データをフェッチする
 			while(rs.next()){
-				Profile prof = new Profile();
+				resProfile prof = new resProfile();
 				
-				String name = rs.getString(1);	//1列目のデータを取得
-				String pass = rs.getString(2);	//2列目のデータを取得
+				String threadname = rs.getString(1);	//1列目のデータを取得
+				String name = rs.getString(2);	//1列目のデータを取得
+				String date = rs.getString(3);	//2列目のデータを取得
+				String title = rs.getString(4);	//1列目のデータを取得
+				String text = rs.getString(5);	//2列目のデータを取得
+				String likes = rs.getString(6);	//1列目のデータを取得
+				String pass = rs.getString(7);	//2列目のデータを取得
 				prof.setName(name);
 				prof.setPass(pass);
 				

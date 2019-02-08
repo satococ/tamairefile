@@ -1,6 +1,6 @@
 package info;	
 
-public class Profile{
+public class resProfile{
 	private String threadno;
 	private String name;
 	private String date;
