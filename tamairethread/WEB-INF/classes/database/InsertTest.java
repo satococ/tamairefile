@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+import java.sql.ResultSet;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -26,24 +29,42 @@ public class InsertTest{
 			//インスタンスを返す
 			Connection cn=
 				DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:orcl","tuser","pass");
+					"jdbc:oracle:thin:@localhost:1521:orcl","tamaireuser","pass");
 			
 			//自動コミットをOFFにする
 			cn.setAutoCommit(false);
 			
 			System.out.println("接続完了");
 			
+			//時間取得
 			String today=null;
 			Calendar cal=Calendar.getInstance();
 			Date date=cal.getTime();
 			SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			today=formatter.format(date);
-
 			
+			//no用
+			String sql1="SELECT MAX(res_no)+1 from res_table";
+			Statement st1=cn.createStatement();
+			ResultSet rs1=st1.executeQuery(sql1);
+			
+			while(rs1.next()){
+				String no =rs1.getString(1);
+			}
+			st1.close();
+			
+			String sql2="SELECT MAX(res_identityno)+1 from res_table where res_thread_id ="+resid+"";
+			Statement st2=cn.createStatement();
+			ResultSet rs2=st2.executeQuery(sql2);
+			
+			while(rs2.next()){
+				String idno =rs2.getString(1);
+			}
+			st2.close();
 			//SQL文を変数に格納する
 			//String sql="insert into user_table(username,password) values('"+userName+"','"+passWord+"')";
 			
-			String sql ="insert into res_table(res_no,res_identityno,res_thread_id,res_user_name,res_date,res_titile,res_text,res_likes) values(SELECT MAX(res_no)+1 from res_table,SELECT MAX(res_identityno)+1 from res_table where res_thread_id ="+resid+",'"+userName+"','"+today+"','"+title+"','"+text+"',0)";
+			String sql ="insert into res_table(res_no,res_identityno,res_thread_id,res_user_name,res_date,res_titile,res_text,res_likes) values("+no+","+idno+"','"+userName+"','"+today+"','"+title+"','"+text+"',0)";
 
 			
 			//Statementインターフェイスを実装するクラスの
