@@ -1,9 +1,14 @@
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.RequestDispatcher;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import info.Profile;
+import info.resProfile;
 import database.InsertTest;
 import database.QueryTest;
-import ex.nocontentException;
 
 public class TamaireThread extends HttpServlet{
 	
@@ -22,7 +27,7 @@ public class TamaireThread extends HttpServlet{
 		InsertTest.insertUser_Table(0,username, title, text);
 	
 	//データベースからリストをもらう
-		List<Profile> pLIst = QueryTest.getQueryList(0);
+		List<resProfile> pLIst = QueryTest.getQueryList(0);
 		
 		
 	//パラメータをJSPに投稿する

@@ -1,27 +1,57 @@
 ﻿
+ログインのためのユーザ情報テーブル
+
 
 sqlplus /nolog
 
-connect tuser/pass
+connect tamaireuser/pass
 
 
-ログインのためのユーザ情報テーブル
+
+CREATE TABLE RES_TABLE(
+ res_no 				NUMBER(6) 		PRIMARY KEY
+,res_identity_no 		NUMBER(4) 		
+,res_thread_id 			NUMBER(8)
+,res_user_name 			VARCHAR2(20) not null
+,res_date 				VARCHAR2(20)
+,res_title 				VARCHAR2(20)
+,res_text 				VARCHAR2(2048)  NOT NULL
+,res_likes 				VARCHAR2(8)       DEFAULT '0'
+);
+
+commit;
+
+
+
+insert into RES_TABLE values(1,1,0,'ore','2019-02-13 14:13:00','は？','ふざけんな！',default);
+
+
+
 
 CREATE TABLE USER_INFO(
  user_no 		NUMBER(5) 		PRIMARY KEY
+
 ,login_name 	VARCHAR2(20) 	UNIQUE,
             					NOT NULL
 ,login_pass 	VARCHAR2(16) 	NOT NULL,
-  								/*  CHECK(login_pass )  HTMLのminlength使う*/
-,user_name 		VARCHAR2(20) 	UNIOUE,
-								NOT NULL
+);
+
+CREATE TABLE RES_TABLE(
+ res_no 				NUMBER(6) 		PRIMARY KEY
+,res_identity_no 		NUMBER(4) 		
+,res_thread_id 			NUMBER(8) 		REFERENCES thread_table(thread_id)
+,res_user_name 			VARCHAR2(20),not null
+,res_date 				VARCHAR2 		DEFAULT sysdate
+,res_title 				VARCHAR2(20)
+,res_text 				VARCHAR2(2048)  NOT NULL
+,res_likes 				NUMBER(8)       DEFAULT 0
 );
 
 CREATE TABLE THREAD_TABLE(
  thread_id 				NUMBER(8) 		PRIMARY KEY
 ,thread_name 			VARCHAR2(100) 	NOT NULL,
 										UNIQUE,
-										/*  CHECK(thread_name )  HTMLのminlength使う*/
+										
 ,thread_last_updated 	VARCHAR2(50) 	DEFAULT sysdate
 ,thread_date 			VARCHAR2(50) 	DEFAULT sysdate
 ,thread_theme 			VARCHAR2(20) 	NOT NULL,
@@ -31,18 +61,13 @@ CREATE TABLE THREAD_TABLE(
  										DEFAULT 0
 );
 
-CREATE TABLE RES_TABLE(
- res_no 				NUMBER(6) 		PRIMARY KEY
-,res_identityno 		NUMBER(4) 		/* CHECK()   */
-,res_thread_id 			NUMBER(8) 		REFERENCES thread_table(thread_id)
-,res_user_name 			VARCHAR2(20) 	REFERENCES user_table(user_name)
-,res_date 				VARCHAR2 		DEFAULT sysdate
-,res_title 				VARCHAR2(20)
-,res_text 				VARCHAR2(2048)  NOT NULL
-,res_likes 				NUMBER(8)       DEFAULT 0
-);
+
 
 CREATE TABLE THEME_TABLE(
  theme_attribute 		VARCHAR2(20) 	PRIMARY KEY
 ,theme_detail 			VARCHAR2(50) 	NOT NULL
 );
+
+commit;
+
+

@@ -9,7 +9,19 @@ import java.util.List;
 import java.util.ArrayList;
 import info.resProfile;
 
-public class QueryTest{
+public class QueryTest{	
+	public static void main(String[] args){
+		
+		List<resProfile> al = getQueryList(0);
+		
+		for(int i = 0; i < al.size();i++){
+			resProfile prof = al.get(i);
+			System.out.println(prof.getThreadno()+"\t"+prof.getName()+"\t"+prof.getDate()+"\t"+prof.getTitle()+"\t"+prof.getText()+"\t"+prof.getLikes());
+		
+		}
+	
+	
+	}
 	
 	public static List<resProfile> getQueryList(int id){
 		
@@ -21,13 +33,11 @@ public class QueryTest{
 
 			//Oracleに接続する
 			Connection cn=
-				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tuser","pass");
+				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","tamaireuser","pass");
 			System.out.println("接続完了");
 			
 			//select文
-			String sql="select res_identityno, res_user_name,
-			res_date, res_titile,res_text,res_likes
-			from res_table WHERE res_thread_id = '"+id+"'";
+			String sql="select res_identity_no, res_user_name,res_date, res_title,res_text,res_likes from res_table WHERE res_thread_id = '"+id+"'";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -48,11 +58,11 @@ public class QueryTest{
 				String text = rs.getString(5);		//5列目のデータを取得
 				String likes = rs.getString(6);		//6列目のデータを取得
 				prof.setThreadno(threadno);
-				prof.setDate(name);
-				prof.setThreadno(date);
-				prof.setDate(title);
-				prof.setThreadno(text);
-				prof.setDate(likes);
+				prof.setName(name);
+				prof.setDate(date);
+				prof.setTitle(title);
+				prof.setText(text);
+				prof.setLikes(likes);
 				
 				
 				userList.add(prof);

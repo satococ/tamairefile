@@ -6,12 +6,12 @@ public class resProfile{
 	private String date;
 	private String title;
 	private String text;
-	private int likes;
+	private String likes;
 	
 	public void setThreadno(String threadno){
 		this.threadno=threadno;
 	}
-	public String getthreadno(){
+	public String getThreadno(){
 		return threadno;
 	}
 	
@@ -27,7 +27,7 @@ public class resProfile{
 	public void setDate(String date){
 		this.date=date;
 	}
-	public String getTate(){
+	public String getDate(){
 		return date;
 	}
 	
@@ -43,15 +43,15 @@ public class resProfile{
 	public void setText(String text){
 		this.text=text;
 	}
-	public String getText){
+	public String getText(){
 		return text;
 	}
 	
 	
-	public void setTLikes(int likes){
+	public void setLikes(String likes){
 		this.likes=likes;
 	}
-	public String getLikes){
+	public String getLikes(){
 		return likes;
 	}
 }

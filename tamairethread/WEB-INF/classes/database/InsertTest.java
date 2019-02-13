@@ -10,11 +10,13 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class InsertTest{
+	
 	public static void main(String[] args){
-		InsertTest.insertUser_Table(args[0],args[1]);
+		InsertTest.insertUser_Table(args[0],args[1],args[2],args[3]);
 	}
 	
-	public static int insertUser_Table(int resid,String userName,String title, String text){
+	
+	public static int insertUser_Table(String resid,String userName,String title, String text){
 		int count = 0; //処理した行数を入れるための変数
 		try{
 			//Driverインターフェイスを実装するクラスをロードする
@@ -41,10 +43,7 @@ public class InsertTest{
 			//SQL文を変数に格納する
 			//String sql="insert into user_table(username,password) values('"+userName+"','"+passWord+"')";
 			
-			String sql ="insert into res_table(res_no,res_identityno,res_thread_id,res_user_name,res_date
-				,res_titile,res_text,res_likes) values(SELECT MAX(res_no)+1 from res_table
-				,SELECT MAX(res_identityno)+1 from res_table where res_thread_id,resid
-				,'"+userName+"','"+today+"','"+title+"','"+text+"',0)";
+			String sql ="insert into res_table(res_no,res_identityno,res_thread_id,res_user_name,res_date,res_titile,res_text,res_likes) values(SELECT MAX(res_no)+1 from res_table,SELECT MAX(res_identityno)+1 from res_table where res_thread_id ="+resid+",'"+userName+"','"+today+"','"+title+"','"+text+"',0)";
 
 			
 			//Statementインターフェイスを実装するクラスの
