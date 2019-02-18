@@ -47,24 +47,25 @@ public class InsertTest{
 			String sql1="SELECT MAX(res_no)+1 from res_table";
 			Statement st1=cn.createStatement();
 			ResultSet rs1=st1.executeQuery(sql1);
-			
+			String no = null;
 			while(rs1.next()){
-				String no =rs1.getString(1);
+				no =rs1.getString(1);
 			}
 			st1.close();
 			
-			String sql2="SELECT MAX(res_identityno)+1 from res_table where res_thread_id ="+resid+"";
+			String sql2="SELECT MAX(res_identity_no)+1 from res_table where res_thread_id ="+resid+"";
 			Statement st2=cn.createStatement();
 			ResultSet rs2=st2.executeQuery(sql2);
+			String idno = null;
 			
 			while(rs2.next()){
-				String idno =rs2.getString(1);
+				idno =rs2.getString(1);
 			}
 			st2.close();
 			//SQL文を変数に格納する
 			//String sql="insert into user_table(username,password) values('"+userName+"','"+passWord+"')";
 			
-			String sql ="insert into res_table(res_no,res_identityno,res_thread_id,res_user_name,res_date,res_titile,res_text,res_likes) values("+no+","+idno+"','"+userName+"','"+today+"','"+title+"','"+text+"',0)";
+			String sql ="insert into res_table(res_no,res_identity_no,res_thread_id,res_user_name,res_date,res_title,res_text,res_likes) values("+no+","+idno+","+resid+",'"+userName+"','"+today+"','"+title+"','"+text+"','0')";
 
 			
 			//Statementインターフェイスを実装するクラスの
