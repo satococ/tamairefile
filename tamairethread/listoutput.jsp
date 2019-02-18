@@ -12,13 +12,15 @@
 	<table border="1">
 		<tr><th>ユーザー名</th><th>パスワード</th></tr>
 		<c:forEach var="prof" items="${users}">
-			<tr><td>${prof.name}</td><td>${prof.pass}</td></tr>
+			<tr><td>${prof.threadno}</td><td>${prof.name}</td><td>${prof.date}</td><td>${prof.title}</td><td>${prof.text}</td><td>${prof.likes}</td></tr>
 		</c:forEach>
 	</table>
-	<form method='post' action='mahiro'>
+	<form method='post' action='tamaire'>
 	ユーザー名<input type='text' name='name'>
 	<br>
-	パスワード<input type='text' name='pass'>
+	タイトル<input type='text' name='title'>
+	<br>
+	本文<input type='text' name='text'>
 	<br>
 	<input type='submit' value='送信'>
 	</form>

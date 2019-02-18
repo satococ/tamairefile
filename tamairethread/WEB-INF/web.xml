@@ -3,28 +3,18 @@
 
 
 	<servlet>
-		<servlet-name>kamata</servlet-name>
+		<servlet-name>tamaire</servlet-name>
 		<servlet-class>TamaireThread</servlet-class>
 	</servlet>
 	
 	
 	<servlet-mapping>
-		<servlet-name>kamata</servlet-name>
-		<url-pattern>/mahiro</url-pattern>
+		<servlet-name>tamaire</servlet-name>
+		<url-pattern>/tamaire</url-pattern>
 	</servlet-mapping>
 	
 	
-	<servlet>
-		<servlet-name>time</servlet-name>
-		<jsp-file>/time.jsp</jsp-file>
-	</servlet>
-	
-	
-	<servlet-mapping>
-		<servlet-name>time</servlet-name>
-		<url-pattern>/time</url-pattern>
-	</servlet-mapping>
-	
+		
 	<servlet>
 		<servlet-name>list</servlet-name>
 		<jsp-file>/listoutput.jsp</jsp-file>
@@ -35,5 +25,8 @@
 		<servlet-name>list</servlet-name>
 		<url-pattern>/list</url-pattern>
 	</servlet-mapping>
+	
+	
+	
 	
 </web-app>
