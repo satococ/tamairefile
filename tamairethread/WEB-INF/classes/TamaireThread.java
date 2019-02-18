@@ -24,7 +24,7 @@ public class TamaireThread extends HttpServlet{
 		String title = req.getParameter("title");
 		String text = req.getParameter("text");
 			//データベースに書き込む
-		InsertTest.insertUser_Table(0,username, title, text);
+		InsertTest.insertUser_Table("0",username, title, text);
 	
 	//データベースからリストをもらう
 		List<resProfile> pLIst = QueryTest.getQueryList(0);
