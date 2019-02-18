@@ -12,7 +12,7 @@ import info.resProfile;
 public class QueryTest{	
 	public static void main(String[] args){
 		
-		List<resProfile> al = getQueryList(0);
+		List<resProfile> al = getQueryList("0");
 		
 		for(int i = 0; i < al.size();i++){
 			resProfile prof = al.get(i);
@@ -23,7 +23,7 @@ public class QueryTest{
 	
 	}
 	
-	public static List<resProfile> getQueryList(int id){
+	public static List<resProfile> getQueryList(String id){
 		
 		List<resProfile> userList = new ArrayList<resProfile>();
 	

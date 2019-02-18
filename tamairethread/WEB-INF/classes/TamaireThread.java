@@ -27,7 +27,7 @@ public class TamaireThread extends HttpServlet{
 		InsertTest.insertUser_Table("0",username, title, text);
 	
 	//データベースからリストをもらう
-		List<resProfile> pLIst = QueryTest.getQueryList(0);
+		List<resProfile> pLIst = QueryTest.getQueryList("0");
 		
 		
 	//パラメータをJSPに投稿する
@@ -41,6 +41,27 @@ public class TamaireThread extends HttpServlet{
 		dis.forward(req,res);
 	
 	}
-
-
+	public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
+		
+		res.setContentType("text/html; charset=UTF-8");
+		//パラメータを受け取る
+		//文字コード固定
+		req.setCharacterEncoding("Windows-31J");
+		
+		String rno = req.getParameter("rno");
+		
+	//データベースからリストをもらう
+		List<resProfile> pLIst = QueryTest.getQueryList(rno);
+		
+		
+	//パラメータをJSPに投稿する
+		
+		req.setAttribute("users",pLIst);
+		
+	//転送先のJSPを指定
+		RequestDispatcher dis= req.getRequestDispatcher("/list");
+	
+		//JSPに転送
+		dis.forward(req,res);
+	}
 }

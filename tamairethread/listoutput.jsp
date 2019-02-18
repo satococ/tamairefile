@@ -15,8 +15,10 @@
 			<tr><td>${prof.threadno}</td><td>${prof.name}</td><td>${prof.date}</td><td>${prof.title}</td><td>${prof.text}</td><td>${prof.likes}</td></tr>
 		</c:forEach>
 	</table>
+	
+	
 	<form method='post' action='tamaire'>
-	ユーザー名<input type='text' name='name'>
+	ユーザー名<input type='text' name='username'>
 	<br>
 	タイトル<input type='text' name='title'>
 	<br>
