@@ -23,9 +23,23 @@ commit;
 
 
 
-insert into RES_TABLE values(1,1,0,'ore','2019-02-13 14:13:00','は？','ふざけんな！',default);
+insert into RES_TABLE values(11,1,1,'ore','2019-02-13 14:13:00','は？','ふざけんな！',default);
+
+commit;
+
+CREATE TABLE THREAD_TABLE(
+ thread_id 				NUMBER(8) 		PRIMARY KEY
+,thread_name 			VARCHAR2(100) 	NOT NULL UNIQUE		
+,thread_last_updated 	VARCHAR2(20) 	
+,thread_theme 			VARCHAR2(20) 	NOT NULL
+,thread_description 	VARCHAR2(200)
+,thread_count 			VARCHAR(9) DEFAULT '0'
+);
+
+insert into THREAD_TABLE values(0,'まじうざ','2019-02-18 15:36:00','恋愛','見てね',default);
 
 
+insert into THREAD_TABLE values(1,'きれそ','2019-02-20 18:32:00','恋愛','愚痴きいて',default);
 
 
 CREATE TABLE USER_INFO(
@@ -52,8 +66,7 @@ CREATE TABLE THREAD_TABLE(
 ,thread_name 			VARCHAR2(100) 	NOT NULL,
 										UNIQUE,
 										
-,thread_last_updated 	VARCHAR2(50) 	DEFAULT sysdate
-,thread_date 			VARCHAR2(50) 	DEFAULT sysdate
+,thread_last_updated 	VARCHAR2(20) 	
 ,thread_theme 			VARCHAR2(20) 	NOT NULL,
  										REFERENCES theme_table(theme_attribute)
 ,thread_description 	VARCHAR2(200)

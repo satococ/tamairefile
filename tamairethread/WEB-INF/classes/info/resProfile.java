@@ -7,12 +7,20 @@ public class resProfile{
 	private String title;
 	private String text;
 	private String likes;
+	private String threadid; 
 	
 	public void setThreadno(String threadno){
 		this.threadno=threadno;
 	}
 	public String getThreadno(){
 		return threadno;
+	}
+	
+		public void setThreadid(String threadid){
+		this.threadid=threadid;
+	}
+	public String getThreadid(){
+		return threadid;
 	}
 	
 	

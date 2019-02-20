@@ -14,6 +14,8 @@ public class TamaireThread extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
+		
+		res.setContentType("text/html; charset=UTF-8");
 		//パラメータを受け取る
 		//文字コード固定
 		req.setCharacterEncoding("Windows-31J");
@@ -23,11 +25,12 @@ public class TamaireThread extends HttpServlet{
 		String username = req.getParameter("username");
 		String title = req.getParameter("title");
 		String text = req.getParameter("text");
+		String id = req.getParameter("id");
 			//データベースに書き込む
-		InsertTest.insertUser_Table("0",username, title, text);
+		InsertTest.insertUser_Table(id,username, title, text);
 	
 	//データベースからリストをもらう
-		List<resProfile> pLIst = QueryTest.getQueryList("0");
+		List<resProfile> pLIst = QueryTest.getQueryList(id);
 		
 		
 	//パラメータをJSPに投稿する
@@ -35,7 +38,7 @@ public class TamaireThread extends HttpServlet{
 		req.setAttribute("users",pLIst);
 		
 	//転送先のJSPを指定
-		RequestDispatcher dis= req.getRequestDispatcher("/list");
+		RequestDispatcher dis= req.getRequestDispatcher("/res");
 	
 		//JSPに転送
 		dis.forward(req,res);
@@ -59,7 +62,7 @@ public class TamaireThread extends HttpServlet{
 		req.setAttribute("users",pLIst);
 		
 	//転送先のJSPを指定
-		RequestDispatcher dis= req.getRequestDispatcher("/list");
+		RequestDispatcher dis= req.getRequestDispatcher("/res");
 	
 		//JSPに転送
 		dis.forward(req,res);

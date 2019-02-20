@@ -16,30 +16,38 @@
 	
 		
 	<servlet>
-		<servlet-name>list</servlet-name>
-		<jsp-file>/listoutput.jsp</jsp-file>
+		<servlet-name>res</servlet-name>
+		<jsp-file>/resoutput.jsp</jsp-file>
 	</servlet>
 	
 	
 	<servlet-mapping>
-		<servlet-name>list</servlet-name>
-		<url-pattern>/list</url-pattern>
+		<servlet-name>res</servlet-name>
+		<url-pattern>/res</url-pattern>
 	</servlet-mapping>
 	
 	
 	
 	<servlet>
-		<servlet-name>tuyoi</servlet-name>
-		<jsp-file>/tuyoi.jsp</jsp-file>
+		<servlet-name>thread</servlet-name>
+		<jsp-file>/threadlistoutput.jsp</jsp-file>
 	</servlet>
 	
 	
 	<servlet-mapping>
-		<servlet-name>tuyoi</servlet-name>
-		<url-pattern>/tuyoi</url-pattern>
+		<servlet-name>thread</servlet-name>
+		<url-pattern>/threadlistoutput</url-pattern>
 	</servlet-mapping>
 	
+		<servlet>
+		<servlet-name>TList</servlet-name>
+		<servlet-class>ThreadList</servlet-class>
+	</servlet>
 	
 	
+	<servlet-mapping>
+		<servlet-name>TList</servlet-name>
+		<url-pattern>/tlist</url-pattern>
+	</servlet-mapping>
 	
 </web-app>

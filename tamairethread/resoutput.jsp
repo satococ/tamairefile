@@ -5,10 +5,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-<head><title>登録されたユーザー</title></head>
+<head><title>なんちゃらレス</title></head>
 <body>
 	
-	<h1>登録されたユーザー</h1>
+	<h1>レス投稿してね</h1>
 	<table border="1">
 		<tr><th>ユーザー名</th><th>パスワード</th></tr>
 		<c:forEach var="prof" items="${users}">
@@ -24,6 +24,7 @@
 	<br>
 	本文<input type='text' name='text'>
 	<br>
+	<input type="hidden" name = 'id' value = "${users[0].threadid}">
 	<input type='submit' value='送信'>
 	</form>
 	
