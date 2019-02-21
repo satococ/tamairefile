@@ -7,25 +7,22 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
 import java.util.ArrayList;
-import info.resProfile;
+import info.ThreadListProfile;
 
-public class QueryTest{	
+public class listQuery{
 	public static void main(String[] args){
-		
-		List<resProfile> al = getQueryList("0");
+			List<ThreadListProfile> al = getQueryList("恋愛");
 		
 		for(int i = 0; i < al.size();i++){
-			resProfile prof = al.get(i);
-			System.out.println(prof.getThreadno()+"\t"+prof.getThreadid()+"\t"+prof.getName()+"\t"+prof.getDate()+"\t"+prof.getTitle()+"\t"+prof.getText()+"\t"+prof.getLikes());
+			ThreadListProfile prof = al.get(i);
+			System.out.println(prof.getThreadid()+"\t"+prof.getName()+"\t"+prof.getUpdate()+"\t"+prof.getDescription()+"\t"+prof.getCount());
 		
 		}
 	
-	
 	}
-	
-	public static List<resProfile> getQueryList(String id){
+	public static List<ThreadListProfile> getQueryList(String theme){
 		
-		List<resProfile> userList = new ArrayList<resProfile>();
+		List<ThreadListProfile> userList = new ArrayList<ThreadListProfile>();
 	
 	
 		try{
@@ -37,7 +34,7 @@ public class QueryTest{
 			System.out.println("接続完了");
 			
 			//select文
-			String sql="select res_identity_no,res_thread_id, res_user_name,res_date, res_title,res_text,res_likes from res_table WHERE res_thread_id = '"+id+"'";
+			String sql="select thread_id,thread_name,thread_last_updated,thread_description,thread_count FROM THREAD_TABLE WHERE thread_theme = '"+theme+"'";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
@@ -49,22 +46,18 @@ public class QueryTest{
 
 			//カーソルを一行だけスクロールし、データをフェッチする
 			while(rs.next()){
-				resProfile prof = new resProfile();
+				ThreadListProfile prof = new ThreadListProfile();
 				
-				String threadno = rs.getString(1);	//1列目のデータを取得
-				String threadid = rs.getString(2);	//2列目のデータを取得
-				String name = rs.getString(3);		//3列目のデータを取得
-				String date = rs.getString(4);		//4列目のデータを取得
-				String title = rs.getString(5);		//5列目のデータを取得
-				String text = rs.getString(6);		//6列目のデータを取得
-				String likes = rs.getString(7);		//7列目のデータを取得
-				prof.setThreadno(threadno);
+				String threadid = rs.getString(1);		//1列目のデータを取得
+				String name = rs.getString(2);			//2列目のデータを取得
+				String update = rs.getString(3);		//3列目のデータを取得
+				String description = rs.getString(4);	//4列目のデータを取得
+				String count = rs.getString(5);			//5列目のデータを取得
 				prof.setThreadid(threadid);
 				prof.setName(name);
-				prof.setDate(date);
-				prof.setTitle(title);
-				prof.setText(text);
-				prof.setLikes(likes);
+				prof.setUpdate(update);
+				prof.setDescription(description);
+				prof.setCount(count);
 				
 				
 				userList.add(prof);
@@ -90,15 +83,7 @@ public class QueryTest{
 		return userList;
 		
 	}
+	
+
+
 }
-
-
-
-
-
-
-
-
-
-
-

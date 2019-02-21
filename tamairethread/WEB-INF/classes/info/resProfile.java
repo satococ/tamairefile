@@ -1,18 +1,26 @@
 package info;	
 
-public class Profile{
+public class resProfile{
 	private String threadno;
 	private String name;
 	private String date;
-	private STring title;
+	private String title;
 	private String text;
-	private int likes;
+	private String likes;
+	private String threadid; 
 	
 	public void setThreadno(String threadno){
-		this.threadid=threadno;
+		this.threadno=threadno;
 	}
-	public String getthreadno(){
+	public String getThreadno(){
 		return threadno;
+	}
+	
+		public void setThreadid(String threadid){
+		this.threadid=threadid;
+	}
+	public String getThreadid(){
+		return threadid;
 	}
 	
 	
@@ -27,7 +35,7 @@ public class Profile{
 	public void setDate(String date){
 		this.date=date;
 	}
-	public String getTate(){
+	public String getDate(){
 		return date;
 	}
 	
@@ -43,15 +51,15 @@ public class Profile{
 	public void setText(String text){
 		this.text=text;
 	}
-	public String getText){
+	public String getText(){
 		return text;
 	}
 	
 	
-	public void setTLikes(int likes){
+	public void setLikes(String likes){
 		this.likes=likes;
 	}
-	public String getLikes){
+	public String getLikes(){
 		return likes;
 	}
 }

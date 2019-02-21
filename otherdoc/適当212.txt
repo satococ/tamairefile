@@ -1,0 +1,37 @@
+insert into res_table
+(res_no
+,res_identityno
+,res_thread_id
+,res_user_name
+,res_date
+,res_titile
+,res_text
+,res_likes
+)
+values
+(SELECT MAX(res_no)+1 from res_table
+,SELECT MAX(res_identityno)+1 from res_table where res_thread_id
+,resid
+,'"+userName+"'
+,'"+today+"'
+,'"+title+"'
+,'"+text+"'
+,0
+)
+
+
+https://blog.clock-up.jp/entry/2014/12/31/oracle-autoincrement
+
+
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+
+String today=null;
+Calendar cal=Calendar.getInstance();
+Date date=cal.getTime();
+SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+today=formatter.format(date);
+
+
