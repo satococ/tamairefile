@@ -13,7 +13,7 @@ public class ThreadList extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
-		req.setCharacterEncoding("Windows-31J");
+		req.setCharacterEncoding("UTF-8");
 	
 		List<ThreadListProfile> tlist = listQuery.getQueryList("—öˆ¤");
 		
@@ -27,7 +27,7 @@ public class ThreadList extends HttpServlet{
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
 		
-		req.setCharacterEncoding("Windows-31J");
+		req.setCharacterEncoding("UTF-8");
 	
 		String theme = req.getParameter("theme");
 		

@@ -16,7 +16,7 @@ public class CreateThreadServlet extends HttpServlet{
 		
 		res.setContentType("text/html; charset=UTF-8");
 		
-		req.setCharacterEncoding("Windows-31J");
+		req.setCharacterEncoding("UTF-8");
 		
 		
 		String threadname = req.getParameter("threadname");

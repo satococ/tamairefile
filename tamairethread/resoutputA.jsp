@@ -44,7 +44,7 @@
 					<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
 					<div class="panel">
 						<ul style="list-style: none;">
-							<li><a href="index.html">Return TOP</a></li>
+							<li><a href="index.jsp">Return TOP</a></li>
 						</ul>
 						<ul id="sns">
 							<li><a href="#" target="_blank"><img src="images/iconFb.png" width="20" height="20" alt="FB"></a></li>
@@ -58,10 +58,8 @@
 		</div>
 		
 		<!--投稿画面のタイムライン-->
-		<div class="Rog" style="padding: 10px 10px 10px 10px;background-color:#ffffff;">
+		<div class="Rog" style="padding: 10px 10px 10px 10px;background-color:#000000;">
 			<h2>投稿一覧</h2>
-			<p>投稿はまだありません</p>
-				<h1>レス投稿してね</h1>
 	<table border="1">
 		<tr><th>No.</th><th>投稿者</th><th>日時</th><th>タイトル</th><th>本文</th><th>いいね</th></tr>
 		<c:forEach var="prof" items="${users}">
@@ -71,11 +69,16 @@
 		</div>
 		<!--投稿画面・TL投稿編集-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
-			<form method='post' action='' style="width: 300px; height: 300px; ">		<!--formのJava参照パスを指定-->
-				名前:<br><input type="text" name="name"  value=""><br>
-			    本文:<br><textarea name="message" class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300字以内で入力してください。"></textarea><br>
-				<br><a class="button" input type="submit" href="#">つぶやく！</a>
-			</form>
+				<form method='post' action='tamaire'>
+	ユーザー名<input type='text' name='username'>
+	<br>
+	タイトル<input type='text' name='title'>
+	<br>
+	本文<input type='text' name='text'>
+	<br>
+	<input type="hidden" name = 'id' value = "${users[0].threadid}">
+	<input type='submit' value='送信'>
+	</form>
 		</div>
 	</div>
 

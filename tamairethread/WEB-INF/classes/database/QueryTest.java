@@ -37,7 +37,7 @@ public class QueryTest{
 			System.out.println("接続完了");
 			
 			//select文
-			String sql="select res_identity_no,res_thread_id, res_user_name,res_date, res_title,res_text,res_likes from res_table WHERE res_thread_id = '"+id+"'";
+			String sql="select res_identity_no,res_thread_id, res_user_name,res_date, res_title,res_text,res_likes from res_table WHERE res_thread_id = '"+id+"' order by res_identity_no";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
