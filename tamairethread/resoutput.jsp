@@ -10,7 +10,7 @@
 	
 	<h1>レス投稿してね</h1>
 	<table border="1">
-		<tr><th>ユーザー名</th><th>パスワード</th></tr>
+		<tr><th>No.</th><th>投稿者</th><th>日時</th><th>タイトル</th><th>本文</th><th>いいね</th></tr>
 		<c:forEach var="prof" items="${users}">
 			<tr><td>${prof.threadno}</td><td>${prof.name}</td><td>${prof.date}</td><td>${prof.title}</td><td>${prof.text}</td><td>${prof.likes}</td></tr>
 		</c:forEach>
@@ -27,6 +27,6 @@
 	<input type="hidden" name = 'id' value = "${users[0].threadid}">
 	<input type='submit' value='送信'>
 	</form>
-	
+	<a href="/tama/home">top</a>
 </body>
 </html>

@@ -39,7 +39,7 @@
 		<url-pattern>/threadlistoutput</url-pattern>
 	</servlet-mapping>
 	
-		<servlet>
+	<servlet>
 		<servlet-name>TList</servlet-name>
 		<servlet-class>ThreadList</servlet-class>
 	</servlet>
@@ -48,6 +48,29 @@
 	<servlet-mapping>
 		<servlet-name>TList</servlet-name>
 		<url-pattern>/tlist</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Create</servlet-name>
+		<servlet-class>CreateThreadServlet</servlet-class>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>Create</servlet-name>
+		<url-pattern>/Create</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<jsp-file>/home.jsp</jsp-file>
+	</servlet>
+	
+	
+	<servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

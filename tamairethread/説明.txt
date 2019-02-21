@@ -1,3 +1,4 @@
 ﻿スレッド本体 resoutput.jsp
 スレッド一覧 threadoutput.jsp
 テーマ選択する予定 home.html
+スレッド作成 createthread.jsp

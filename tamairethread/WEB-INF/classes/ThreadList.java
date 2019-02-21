@@ -26,9 +26,12 @@ public class ThreadList extends HttpServlet{
 	
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
+		
 		req.setCharacterEncoding("Windows-31J");
 	
-		List<ThreadListProfile> tlist = listQuery.getQueryList("—öˆ¤");
+		String theme = req.getParameter("theme");
+		
+		List<ThreadListProfile> tlist = listQuery.getQueryList(theme);
 		
 		req.setAttribute("users",tlist);
 		

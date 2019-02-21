@@ -23,7 +23,7 @@ commit;
 
 
 
-insert into RES_TABLE values(11,1,1,'ore','2019-02-13 14:13:00','は？','ふざけんな！',default);
+insert into RES_TABLE values(17,1,3,'ore','2019-02-13 14:13:00','は？','ふざけんな！',default);
 
 commit;
 
@@ -36,10 +36,12 @@ CREATE TABLE THREAD_TABLE(
 ,thread_count 			VARCHAR(9) DEFAULT '0'
 );
 
-insert into THREAD_TABLE values(0,'まじうざ','2019-02-18 15:36:00','恋愛','見てね',default);
+insert into THREAD_TABLE values(2,'まじきれ','2019-02-18 15:36:00','0','見てね',default);
+
+//恋愛が0 スポーツが1
 
 
-insert into THREAD_TABLE values(1,'きれそ','2019-02-20 18:32:00','恋愛','愚痴きいて',default);
+insert into THREAD_TABLE values(3,'は～','2019-02-20 18:32:00','1','愚痴きいて',default);
 
 
 CREATE TABLE USER_INFO(

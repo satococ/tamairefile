@@ -1,0 +1,15 @@
+threadlistoutput.jsp
+
+‚Ù‚µ‚¢•¨
+thread_name
+thread_last_updated
+thread_description
+thread_count
+
+listQuery.java
+
+select thread_id,thread_name,thread_last_updated,thread_description,thread_count
+
+
+
+	<input type="hidden" name = 'id' value = "${users.threadid}">
