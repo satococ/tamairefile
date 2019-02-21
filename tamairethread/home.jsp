@@ -18,8 +18,8 @@
 <a href="/tama/tlist?theme=1">スポーツ</a>
 <a href="/tama/tlist?theme=3">a</a>
 <a href="/tama/tlist?theme=4">b</a>
-<a href="/tama/tlist?theme=恋愛">c</a>
-<a href="/tama/tamaire?theme=恋愛">d</a>
+<a href="/tama/tlist?theme=5">c</a>
+<a href="/tama/tlist?theme=6">d</a>
 
 </body>
 </html>

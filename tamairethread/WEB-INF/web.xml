@@ -17,7 +17,7 @@
 		
 	<servlet>
 		<servlet-name>res</servlet-name>
-		<jsp-file>/resoutput.jsp</jsp-file>
+		<jsp-file>/resoutputA.jsp</jsp-file>
 	</servlet>
 	
 	
@@ -30,7 +30,7 @@
 	
 	<servlet>
 		<servlet-name>thread</servlet-name>
-		<jsp-file>/threadlistoutput.jsp</jsp-file>
+		<jsp-file>/threadoutput.jsp</jsp-file>
 	</servlet>
 	
 	

@@ -20,8 +20,12 @@
 	本文<input type='text' name='text'>
 	<br>
 	<select name="theme">
-	<option value=0>恋愛</option>
-	<option value=1>スポーツ</option>
+	<option value=0>スポーツ</option>
+	<option value=1>悩み・相談</option>
+	<option value=2>料理・グルメ</option>
+	<option value=3>旅行・観光</option>
+	<option value=4>ゲーム</option>
+	<option value=5>動物・自然</option>
 	</select>
 	<input type='submit' value='作成'>
 	

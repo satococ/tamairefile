@@ -1,3 +1,8 @@
+<%@ page pageEncoding="UTF-8"
+	contentType="text/html;charset=UTF-8" %>
+
+<%--JSTL 1.1.2 core タグライブラリ--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="ja">
 <head>
@@ -87,12 +92,12 @@
 					<h2><span>SLED</span></h2>
 				</header>
 				<ul id="gallery">
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo.jpg" alt=""></figure></a></li>
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo2.jpg" alt=""></figure></a></li>
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo3.jpg" alt=""></figure></a></li>
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo4.jpg" alt=""></figure></a></li>
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo5.jpg" alt=""></figure></a></li>
-					<li><a href="sled.html"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo6.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=0"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=1"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo2.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=2"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo3.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=3"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo4.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=4"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo5.jpg" alt=""></figure></a></li>
+					<li><a href="/tama/tlist?theme=5"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo6.jpg" alt=""></figure></a></li>
 				</ul>
 				<style>
 					figure.snip1384 {
