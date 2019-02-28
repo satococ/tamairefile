@@ -59,6 +59,7 @@
 		
 		<!--投稿画面のタイムライン-->
 		<div class="Rog" style="padding: 10px 10px 10px 10px;background-color:#000000;">
+		<h2>${name}</h2>
 			<h2>投稿一覧</h2>
 	<table border="1">
 		<tr><th>No.</th><th>投稿者</th><th>日時</th><th>タイトル</th><th>本文</th><th>いいね</th></tr>

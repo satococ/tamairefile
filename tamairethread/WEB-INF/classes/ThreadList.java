@@ -33,6 +33,7 @@ public class ThreadList extends HttpServlet{
 		
 		List<ThreadListProfile> tlist = listQuery.getQueryList(theme);
 		
+		req.setAttribute("themeA",theme);
 		req.setAttribute("users",tlist);
 		
 		RequestDispatcher dis= req.getRequestDispatcher("/threadlistoutput");

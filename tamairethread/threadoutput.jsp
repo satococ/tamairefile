@@ -69,6 +69,24 @@
 		</div>
 		<!--投稿画面・TL投稿編集-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
+	<c:if test="${themeA==0}">
+		<p>スポーツにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==1}">
+		<p>悩み・相談にスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==2}">
+		<p>料理・グルメにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==3}">
+		<p>旅行・観光にスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==4}">
+		<p>ゲームにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==5}">
+		<p>動物・自然にスレッドを作成</p>
+	</c:if>
 			<form method='post' action='Create'>
 	スレッド名<input type='text' name='threadname'>
 	<br>
@@ -80,7 +98,9 @@
 	<br>
 	本文<input type='text' name='text'>
 	<br>
-	<select name="theme">
+	
+	<input type="hidden" name = 'theme' value = "${themeA}">
+	<%-- <select name="theme">
 	<option value=0>スポーツ</option>
 	<option value=1>悩み・相談</option>
 	<option value=2>料理・グルメ</option>
@@ -88,6 +108,7 @@
 	<option value=4>ゲーム</option>
 	<option value=5>動物・自然</option>
 	</select>
+	--%>
 	<input type='submit' value='作成'>
 		</div>
 	</div>
