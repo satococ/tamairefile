@@ -1,11 +1,11 @@
 package info;	
 
 public class ThreadListProfile{
-	String threadid;
-	String name;
-	String update;
-	String description;
-	String count;
+	private String threadid;
+	private String name;
+	private String update;
+	private String description;
+	private String count;
 	
 	public void setThreadid(String threadid){
 		this.threadid=threadid;
