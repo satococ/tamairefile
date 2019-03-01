@@ -10,7 +10,7 @@ import info.resProfile;
 import database.InsertTest;
 import database.QueryTest;
 import database.NameQuery;
-import kaigyou.kaigyou;
+import other.kaigyou;
 
 public class TamaireThread extends HttpServlet{
 	
