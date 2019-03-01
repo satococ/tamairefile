@@ -1,4 +1,4 @@
-package kaigyou;
+package other;
 
 public class kaigyou{
 	public static String Kaigyou(String text){
