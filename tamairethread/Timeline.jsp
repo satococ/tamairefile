@@ -1,11 +1,7 @@
 <%@ page pageEncoding="UTF-8"
 	contentType="text/html;charset=UTF-8" %>
 
-<<<<<<< HEAD
-<%--JSTL 1.1.2 core É^ÉOÉâÉCÉuÉâÉä--%>
-=======
 <%--JSTL 1.1.2 core „Çø„Ç∞„É©„Ç§„Éñ„É©„É™--%>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -23,11 +19,7 @@
 <body id="top">
 	<style>
 		body{
-<<<<<<< HEAD
-			font: 14px/1.9 'Noto Sans JP', Arial, Verdana, ü‡ÉSÉVÉbÉN, YuGothic,'ÉqÉâÉMÉmäpÉS ProN W3', 'Hiragino Kaku Gothic ProN', ÉÅÉCÉäÉI, Meiryo,sans-serif;
-=======
 			font: 14px/1.9 'Noto Sans JP', Arial, Verdana, Ê∏∏„Ç¥„Ç∑„ÉÉ„ÇØ, YuGothic,'„Éí„É©„ÇÆ„ÉéËßí„Ç¥ ProN W3', 'Hiragino Kaku Gothic ProN', „É°„Ç§„É™„Ç™, Meiryo,sans-serif;
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			font-weight: 300;
 			-webkit-text-size-adjust:100%;
 			overflow-x: hidden;
@@ -43,20 +35,12 @@
 		}
 		a:active, a:focus,input:active, input:focus{outline:0;}
 	</style>
-<<<<<<< HEAD
-		<!--ìäçeâÊñ ÇÃÉ^ÉCÉÄÉâÉCÉì-->
-		<div class="container">
-			<header class="clearfix">
-				<span><a href="index.jsp" style="color: #ff69b4;">Å©TOP</a></span>
-				<span><a href="/tama/tlist?theme=${themeA}" style="color: #ff69b4;">Å@Å©ÉXÉåÉbÉhàÍóó</a></span>
-				<h1>${name}</h1>
-=======
 		<!--ÊäïÁ®øÁîªÈù¢„ÅÆ„Çø„Ç§„É†„É©„Ç§„É≥-->
 		<div class="container">
 			<header class="clearfix">
-				<span><a href="Thread.html" style="color: #ff69b4;">‚Üê„Çπ„É¨„ÉÉ„Éâ‰∏ÄË¶ß</a></span>
-				<h1>THREADÂêç</h1>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
+				<span><a href="index.jsp" style="color: #ff69b4;">‚ÜêTOP</a></span>
+				<span><a href="/tama/tlist?theme=${themeA}" style="color: #ff69b4;">„ÄÄ‚Üê„Çπ„É¨„ÉÉ„Éâ‰∏ÄË¶ß</a></span>
+				<h1>${name}</h1>
 				<nav>
 					<a href="" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
 					<a href="" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
@@ -65,14 +49,13 @@
 			<div class="main" style="margin: 0px;">
 				<ul class="cbp_tmtimeline">
 					<li>
-<<<<<<< HEAD
 					<c:forEach var="prof" items="${users}">
 						<time class="cbp_tmtime" datetime="">
 						<c:forTokens items="${prof.date}" delims=" " var="timea"><span>${timea}</span></c:forTokens>
 						 </time>
 						 <div class="cbp_tmicon cbp_tmicon-phone"></div>
 						<div class="cbp_tmlabel">
-							<h2>${prof.name}ÅF${prof.title}</h2>
+							<h2>${prof.name}Ôºö${prof.title}</h2>
 							<p>${prof.text}</p>
 						</div>
 						
@@ -80,24 +63,6 @@
 
 					</li>
 					
-=======
-						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>ÊäïÁ®øËÄÖÔºöÊäïÁ®ø„Çø„Ç§„Éà„É´</h2>
-							<p>Êú¨Êñá</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2>Greens radish arugula</h2>
-							<p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot winter purslane collard greens spring onion squash lentil. Artichoke salad bamboo shoot black-eyed pea brussels sprout garlic kohlrabi.</p>
-						</div>
-					</li>
-
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 				</ul>
 			</div>
 		</div>
@@ -423,37 +388,23 @@
 				content: "\f060";
 			}
 		</style>
-<<<<<<< HEAD
-		<!--ìäçeâÊñ ÅETLìäçeï“èW-->
-		<div class="Toukou" style="width: 350px; height: 350px;">
-				<form method='post' action='tamaire' style="width: 300px; height: 300px; ">		<!--formÇÃJavaéQè∆ÉpÉXÇéwíË-->
-				ÉÜÅ[ÉUÅ[ñº:<br><input type='text' name='username'><br>
-				É^ÉCÉgÉã:<br><input type='text' name='title'><br>
-			    ñ{ï∂:<br><textarea name='text' class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300éöà»ì‡Ç≈ì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅB"></textarea><br>
-				<input type="hidden" name = 'id' value = "${users[0].threadid}">
-				<br><a class="button" input type="submit" href="#">Ç¬Ç‘Ç‚Ç≠ÅI</a>
-				<br>
-				<input class="button" type='submit' value='Ç¬Ç‘Ç‚Ç≠ÅI'>
-				
-=======
 		<!--ÊäïÁ®øÁîªÈù¢„ÉªTLÊäïÁ®øÁ∑®ÈõÜ-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
-			<form method='post' action='' style="width: 300px; height: 300px; ">		<!--form„ÅÆJavaÂèÇÁÖß„Éë„Çπ„ÇíÊåáÂÆö-->
-				ÂêçÂâç:<br><input type="text" name="name"  value=""><br>
-				„Çø„Ç§„Éà„É´:<br><input type="text" name="name"  value=""><br>
-			    Êú¨Êñá:<br><textarea name="message" class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300Â≠ó‰ª•ÂÜÖ„ÅßÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ"></textarea><br>
+				<form method='post' action='tamaire' style="width: 300px; height: 300px; ">		<!--form„ÅÆJavaÂèÇÁÖß„Éë„Çπ„ÇíÊåáÂÆö-->
+				„É¶„Éº„Ç∂„ÉºÂêç:<br><input type='text' name='username'><br>
+				„Çø„Ç§„Éà„É´:<br><input type='text' name='title'><br>
+			    Êú¨Êñá:<br><textarea name='text' class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300Â≠ó‰ª•ÂÜÖ„ÅßÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ"></textarea><br>
+				<input type="hidden" name = 'id' value = "${users[0].threadid}">
 				<br><a class="button" input type="submit" href="#">„Å§„Å∂„ÇÑ„ÅèÔºÅ</a>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
+				<br>
+				<input class="button" type='submit' value='„Å§„Å∂„ÇÑ„ÅèÔºÅ'>
+				
 			</form>
 		</div>
 	</div>
 
 		<style>
-<<<<<<< HEAD
-			.Rog{	/* Å[Å[Å[É^ÉCÉÄÉâÉCÉìîÕàÕéwíËÅ[Å[Å[ */
-=======
 			.Rog{	/* „Éº„Éº„Éº„Çø„Ç§„É†„É©„Ç§„É≥ÁØÑÂõ≤ÊåáÂÆö„Éº„Éº„Éº */
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			top: 100px;
 			left: 2%;
 			width: 50%;
@@ -462,11 +413,7 @@
 			margin: 0;
 			}
 		
-<<<<<<< HEAD
-			.Toukou{	/* Å[Å[Å[ìäçeÇÃîÕàÕéwíËÅ[Å[Å[ */
-=======
 			.Toukou{	/* „Éº„Éº„ÉºÊäïÁ®ø„ÅÆÁØÑÂõ≤ÊåáÂÆö„Éº„Éº„Éº */
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			top: 40%;
 			left: 80%;
 			float:left;
@@ -516,22 +463,14 @@
 		overflow: scroll;
 		}
 		
-<<<<<<< HEAD
-		/* ÉwÉbÉ_Å[------------------------------------------------------------*/
-=======
 		/* „Éò„ÉÉ„ÉÄ„Éº------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		#mainnav a{
 			color: #fff;
 			font-family: 'Modern Antiqua', 'Noto Sans JP',serif;
 			list-style: none;
 		}
 		
-<<<<<<< HEAD
-		/* ÉtÉbÉ^Å[------------------------------------------------------------*/
-=======
 		/* „Éï„ÉÉ„Çø„Éº------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		#footer{
 			clear: both;
 			padding: 50px 10px 50px 0;
@@ -540,11 +479,7 @@
 			list-style: none;
 		}
 		
-<<<<<<< HEAD
-		/* ã§í ------------------------------------------------------------*/
-=======
 		/* ÂÖ±ÈÄö------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		h1, h2{
 			font-family: 'Modern Antiqua', 'Noto Sans JP',serif;
 			list-style: none;
@@ -638,11 +573,7 @@
 			margin-bottom: 20px;
 		}
 		
-<<<<<<< HEAD
-		/* RESPONSIVE ê›íË------------------------------------------------------------*/
-=======
 		/* RESPONSIVE Ë®≠ÂÆö------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		@media only screen and (min-width: 800px){
 			body{
 				font-size:14px;
@@ -848,11 +779,7 @@
 				margin: 55px auto;
 			}
 		}
-<<<<<<< HEAD
-		/*ÉeÉLÉXÉg---------------------------------------------------------*/
-=======
 		/*„ÉÜ„Ç≠„Çπ„Éà---------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		.msr_text_02 {
 			padding-bottom: 20px;
 			width: 460px;
@@ -873,11 +800,7 @@
 			height: 40px;
 			width: 460px;
 		}
-<<<<<<< HEAD
-		/*É`ÉFÉbÉNÉ{ÉbÉNÉX-------------------------------------------*/
-=======
 		/*„ÉÅ„Çß„ÉÉ„ÇØ„Éú„ÉÉ„ÇØ„Çπ-------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		.msr_chack_02 {
 			  padding-bottom: 20px;
 		}

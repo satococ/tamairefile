@@ -1,11 +1,7 @@
 <%@ page pageEncoding="UTF-8"
 	contentType="text/html;charset=UTF-8" %>
 
-<<<<<<< HEAD
-<%--JSTL 1.1.2 core ƒ^ƒOƒ‰ƒCƒuƒ‰ƒŠ--%>
-=======
 <%--JSTL 1.1.2 core ã‚¿ã‚°ãƒ©ã‚¤ãƒ–ãƒ©ãƒª--%>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -23,11 +19,7 @@
 <body id="top">
 	<style>
 		body{
-<<<<<<< HEAD
-			font: 14px/1.9 'Noto Sans JP', Arial, Verdana, ŸàƒSƒVƒbƒN, YuGothic,'ƒqƒ‰ƒMƒmŠpƒS ProN W3', 'Hiragino Kaku Gothic ProN', ƒƒCƒŠƒI, Meiryo,sans-serif;
-=======
 			font: 14px/1.9 'Noto Sans JP', Arial, Verdana, æ¸¸ã‚´ã‚·ãƒƒã‚¯, YuGothic,'ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ ProN W3', 'Hiragino Kaku Gothic ProN', ãƒ¡ã‚¤ãƒªã‚ª, Meiryo,sans-serif;
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			font-weight: 300;
 			-webkit-text-size-adjust:100%;
 			overflow-x: hidden;
@@ -43,17 +35,10 @@
 		}
 		a:active, a:focus,input:active, input:focus{outline:0;}
 	</style>
-<<<<<<< HEAD
-		<!--“Še‰æ–Ê‚Ìƒ^ƒCƒ€ƒ‰ƒCƒ“-->
-		<div class="container">
-			<header class="clearfix">
-				<span><a href="index.jsp" style="color: #ff69b4;">©TOP</a></span>
-=======
 		<!--æŠ•ç¨¿ç”»é¢ã®ã‚¿ã‚¤ãƒ ãƒ©ã‚¤ãƒ³-->
 		<div class="container">
 			<header class="clearfix">
 				<span><a href="index.jsp" style="color: #ff69b4;">â†TOP</a></span>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 				<h1>THREAD LIST</h1>
 				<nav>
 					<a href="" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
@@ -62,7 +47,6 @@
 			</header>	
 			<div class="main" style="margin: 0px;">
 				<ul class="cbp_tmtimeline">
-<<<<<<< HEAD
 				
 			<c:forEach var="prof" items="${users}">
 					<li>
@@ -79,24 +63,6 @@
 					</li>
 					
 				</c:forEach>
-=======
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>ä½œæˆè€…ï¼šTHREADå</h2>
-							<p>è©³ç´°</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2>ä½œæˆè€…ï¼šTHREADå</h2>
-							<p>è©³ç´°</p>
-						</div>
-					</li>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 				</ul>
 			</div>
 		</div>
@@ -422,57 +388,43 @@
 				content: "\f060";
 			}
 		</style>
-<<<<<<< HEAD
-		<!--“Še‰æ–ÊETL“Še•ÒW-->
-		<div class="Toukou" style="width: 350px; height: 350px;">
-		<c:if test="${themeA==0}">
-			<p>ƒXƒ|[ƒc‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-		</c:if>
-		<c:if test="${themeA==1}">
-		<p>”Y‚İE‘Š’k‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-	</c:if>
-	<c:if test="${themeA==2}">
-		<p>—¿—EƒOƒ‹ƒ‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-	</c:if>
-	<c:if test="${themeA==3}">
-		<p>—·sEŠÏŒõ‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-	</c:if>
-	<c:if test="${themeA==4}">
-		<p>ƒQ[ƒ€‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-	</c:if>
-	<c:if test="${themeA==5}">
-		<p>“®•¨E©‘R‚ÉƒXƒŒƒbƒh‚ğì¬</p>
-	</c:if>
-			<form method='post' action='Create' style="width: 300px; height: 300px; ">		<!--form‚ÌJavaQÆƒpƒX‚ğw’è-->
-				ƒXƒŒƒbƒh–¼:<br><input type='text' name='threadname'><br>
-				ƒXƒŒƒbƒhŒ©o‚µ:<br><input type='text' name='description'><br>
-				ƒ†[ƒU[–¼:<br><input type='text' name='username'>
-				<br>
-				ƒ^ƒCƒgƒ‹:<br><input type='text' name='title'>
-				<br>
-			    –{•¶:<br><textarea name='text'class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300šˆÈ“à‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B"></textarea><br>
-				<input type="hidden" name = 'theme' value = "${themeA}">
-				<br><a class="button" input type="submit" >‚Â‚Ô‚â‚­I</a>
-				<input class="button" type='submit' value='ƒXƒŒƒbƒhì¬I'>
-=======
 		<!--æŠ•ç¨¿ç”»é¢ãƒ»TLæŠ•ç¨¿ç·¨é›†-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
-			<form method='post' action='' style="width: 300px; height: 300px; ">		<!--formã®Javaå‚ç…§ãƒ‘ã‚¹ã‚’æŒ‡å®š-->
-				åå‰:<br><input type="text" name="name"  value=""><br>
-				ã‚¿ã‚¤ãƒˆãƒ«:<br><input type="text" name="name"  value=""><br>
-			    æœ¬æ–‡:<br><textarea name="message" class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"></textarea><br>
-				<br><a class="button" input type="submit" href="#">ã¤ã¶ã‚„ãï¼</a>
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
+		<c:if test="${themeA==0}">
+			<p>ã‚¹ãƒãƒ¼ãƒ„ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+		</c:if>
+		<c:if test="${themeA==1}">
+		<p>æ‚©ã¿ãƒ»ç›¸è«‡ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+	</c:if>
+	<c:if test="${themeA==2}">
+		<p>æ–™ç†ãƒ»ã‚°ãƒ«ãƒ¡ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+	</c:if>
+	<c:if test="${themeA==3}">
+		<p>æ—…è¡Œãƒ»è¦³å…‰ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+	</c:if>
+	<c:if test="${themeA==4}">
+		<p>ã‚²ãƒ¼ãƒ ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+	</c:if>
+	<c:if test="${themeA==5}">
+		<p>å‹•ç‰©ãƒ»è‡ªç„¶ã«ã‚¹ãƒ¬ãƒƒãƒ‰ã‚’ä½œæˆ</p>
+	</c:if>
+			<form method='post' action='Create' style="width: 300px; height: 300px; ">		<!--formã®Javaå‚ç…§ãƒ‘ã‚¹ã‚’æŒ‡å®š-->
+				ã‚¹ãƒ¬ãƒƒãƒ‰å:<br><input type='text' name='threadname'><br>
+				ã‚¹ãƒ¬ãƒƒãƒ‰è¦‹å‡ºã—:<br><input type='text' name='description'><br>
+				ãƒ¦ãƒ¼ã‚¶ãƒ¼å:<br><input type='text' name='username'>
+				<br>
+				ã‚¿ã‚¤ãƒˆãƒ«:<br><input type='text' name='title'>
+				<br>
+			    æœ¬æ–‡:<br><textarea name='text'class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300å­—ä»¥å†…ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"></textarea><br>
+				<input type="hidden" name = 'theme' value = "${themeA}">
+				<br><a class="button" input type="submit" >ã¤ã¶ã‚„ãï¼</a>
+				<input class="button" type='submit' value='ã‚¹ãƒ¬ãƒƒãƒ‰ä½œæˆï¼'>
 			</form>
 		</div>
 	</div>
 
 		<style>
-<<<<<<< HEAD
-			.Rog{	/* [[[ƒ^ƒCƒ€ƒ‰ƒCƒ“”ÍˆÍw’è[[[ */
-=======
 			.Rog{	/* ãƒ¼ãƒ¼ãƒ¼ã‚¿ã‚¤ãƒ ãƒ©ã‚¤ãƒ³ç¯„å›²æŒ‡å®šãƒ¼ãƒ¼ãƒ¼ */
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			top: 100px;
 			left: 2%;
 			width: 50%;
@@ -481,11 +433,7 @@
 			margin: 0;
 			}
 		
-<<<<<<< HEAD
-			.Toukou{	/* [[[“Še‚Ì”ÍˆÍw’è[[[ */
-=======
 			.Toukou{	/* ãƒ¼ãƒ¼ãƒ¼æŠ•ç¨¿ã®ç¯„å›²æŒ‡å®šãƒ¼ãƒ¼ãƒ¼ */
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 			top: 40%;
 			left: 80%;
 			float:left;
@@ -535,22 +483,14 @@
 		overflow: scroll;
 		}
 		
-<<<<<<< HEAD
-		/* ƒwƒbƒ_[------------------------------------------------------------*/
-=======
 		/* ãƒ˜ãƒƒãƒ€ãƒ¼------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		#mainnav a{
 			color: #fff;
 			font-family: 'Modern Antiqua', 'Noto Sans JP',serif;
 			list-style: none;
 		}
 		
-<<<<<<< HEAD
-		/* ƒtƒbƒ^[------------------------------------------------------------*/
-=======
 		/* ãƒ•ãƒƒã‚¿ãƒ¼------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		#footer{
 			clear: both;
 			padding: 50px 10px 50px 0;
@@ -559,11 +499,7 @@
 			list-style: none;
 		}
 		
-<<<<<<< HEAD
-		/* ‹¤’Ê------------------------------------------------------------*/
-=======
 		/* å…±é€š------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		h1, h2{
 			font-family: 'Modern Antiqua', 'Noto Sans JP',serif;
 			list-style: none;
@@ -657,11 +593,7 @@
 			margin-bottom: 20px;
 		}
 		
-<<<<<<< HEAD
-		/* RESPONSIVE İ’è------------------------------------------------------------*/
-=======
 		/* RESPONSIVE è¨­å®š------------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		@media only screen and (min-width: 800px){
 			body{
 				font-size:14px;
@@ -867,11 +799,7 @@
 				margin: 55px auto;
 			}
 		}
-<<<<<<< HEAD
-		/*ƒeƒLƒXƒg---------------------------------------------------------*/
-=======
 		/*ãƒ†ã‚­ã‚¹ãƒˆ---------------------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		.msr_text_02 {
 			padding-bottom: 20px;
 			width: 460px;
@@ -892,11 +820,7 @@
 			height: 40px;
 			width: 460px;
 		}
-<<<<<<< HEAD
-		/*ƒ`ƒFƒbƒNƒ{ƒbƒNƒX-------------------------------------------*/
-=======
 		/*ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹-------------------------------------------*/
->>>>>>> 1219d91de1a49289f4c01c66ecabf51106f4348d
 		.msr_chack_02 {
 			  padding-bottom: 20px;
 		}
