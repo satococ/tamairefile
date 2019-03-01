@@ -10,6 +10,7 @@ import info.resProfile;
 import database.InsertTest;
 import database.QueryTest;
 import database.NameQuery;
+import kaigyou.kaigyou;
 
 public class TamaireThread extends HttpServlet{
 	
@@ -26,8 +27,12 @@ public class TamaireThread extends HttpServlet{
 		String title = req.getParameter("title");
 		String text = req.getParameter("text");
 		String id = req.getParameter("id");
+		
+		String theme = req.getParameter("theme");
 			//データベースに書き込む
-		InsertTest.insertUser_Table(id,username, title, text);
+		String altertext = kaigyou.Kaigyou(text);
+		
+		InsertTest.insertUser_Table(id,username, title,altertext);
 	
 	//データベースからリストをもらう
 		List<resProfile> pLIst = QueryTest.getQueryList(id);
@@ -35,6 +40,8 @@ public class TamaireThread extends HttpServlet{
 		
 		String threadname = NameQuery.getQueryName(id);
 		
+		
+		req.setAttribute("themeA",theme);
 		req.setAttribute("name",threadname);
 		
 	//パラメータをJSPに投稿する
@@ -57,12 +64,16 @@ public class TamaireThread extends HttpServlet{
 		
 		String rno = req.getParameter("rno");
 		
+		String theme = req.getParameter("theme");
+		
 	//データベースからリストをもらう
 		List<resProfile> pLIst = QueryTest.getQueryList(rno);
 		
 		
 		String threadname = NameQuery.getQueryName(rno);
 		
+		
+		req.setAttribute("themeA",theme);
 		req.setAttribute("name",threadname);
 		
 	//パラメータをJSPに投稿する

@@ -3,6 +3,8 @@
 
 <%--JSTL 1.1.2 core タグライブラリ--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -14,8 +16,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/script.js"></script>
 </head>
-
 <body id="top">
+<!--メインの初期設定・フォントや形式など-->
 	<style>
 		body{
 			font: 14px/1.9 'Noto Sans JP', Arial, Verdana, 游ゴシック, YuGothic,'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
@@ -34,19 +36,18 @@
 		}
 		a:active, a:focus,input:active, input:focus{outline:0;}
 	</style>
-
+<!--//メインの初期設定-->
 	<div id="wrapper">
 		<div id="sidebar">
 			<div id="sidebarWrap">
+				<!--メニューバーのロゴ-->
 				<h1><img src="images/logo.jpg" width="87" height="25" style="left: 20%;" alt="logo"></h1>
 					<nav id="mainnav">
 						<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
 						<div class="panel">
 							<ul style="list-style: none;">
 								<li><a href="#top">TOP</a></li>
-								<!--<li><a href="#sec01">ACCOUNT</a></li>-->
-								<li><a href="#sec02">SLED</a></li>
-								<!--<li><a href="#sec03">ABOUT</a></li>-->
+								<li><a href="#sec02">THREAD</a></li>
 								<li><a href="#sec04">FOOTER</a></li>
 							</ul>
 							<ul id="sns">
@@ -61,35 +62,9 @@
 			</div>
 		<div id="content">
 			<p id="mainImg"><img src="images/001.jpg" alt=""></p>
-			<!-- ACCOUNT 
-			<section id="sec01">
-				<header>
-					<h2><span>ACCOUNT</span></h2>
-				</header>
-				<div class="innerS">
-					<div class="col-xs-6 col-xs-offset-3">
-						<form method="post">
-							<h1>新規会員登録</h1>
-						<div class="form-group">
-							<br><input type="text" class="form-control" name="username" placeholder="ユーザー名" required />
-						</div>
-						<div class="form-group">
-							<br><input type="email"  class="form-control" name="email" placeholder="メールアドレス" required />
-						</div>
-						<div class="form-group">
-							<br><input type="password" class="form-control" name="password" placeholder="パスワード" required />
-						</div>
-						<br><button type="submit" class="btn btn-default" name="signup">会員登録する</button>
-						<a href="index.php">ログインはこちら</a>
-						</form>
-					</div>
-				</div>
-			</section>
-			-->
-			<!-- SLED -->
 			<section id="sec02">
 				<header>
-					<h2><span>SLED</span></h2>
+					<h2><span>THREAD</span></h2>
 				</header>
 				<ul id="gallery">
 					<li><a href="/tama/tlist?theme=0"><figure class="snip1314"><div class="border one"><div></div></div><div class="border two"><div></div></div><img src="images/Spo.jpg" alt=""></figure></a></li>
@@ -360,30 +335,7 @@
 					}
 				</style>
 			</section>
-			<!-- // SLED -->
-			<!-- ABOUT --
-			<section id="sec03">
-				<header>
-					<h2><span>ABOUT</span></h2>
-				</header>
-				<div class="inner">
-					<ul class="col4">
-						<li>
-
-						</li>
-						<li>
-
-						</li>
-						<li>
-
-						</li>
-						<li>
-
-						</li>
-					</ul>
-				</div>
-			</section>
-			!-- // ABOUT -->
+			<!-- // Thread -->
 			<!-- 注意事項 -->
 			<section id="sec04">
 				<header>

@@ -34,7 +34,7 @@ public class listQuery{
 			System.out.println("接続完了");
 			
 			//select文
-			String sql="select thread_id,thread_name,thread_last_updated,thread_description,thread_count FROM THREAD_TABLE WHERE thread_theme = '"+theme+"'";
+			String sql="select thread_id,thread_name,thread_last_updated,thread_description,thread_count FROM THREAD_TABLE WHERE thread_theme = '"+theme+"' order by thread_id desc";
 
 			//Statementインターフェイスを実装するクラスをインスタンス化する
 			Statement st=cn.createStatement();
