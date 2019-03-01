@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import database.CreateThread;
+import info.ThreadListProfile;
+import database.listQuery;
+
 
 
 public class CreateThreadServlet extends HttpServlet{
@@ -16,7 +19,7 @@ public class CreateThreadServlet extends HttpServlet{
 		
 		res.setContentType("text/html; charset=UTF-8");
 		
-		req.setCharacterEncoding("Windows-31J");
+		req.setCharacterEncoding("UTF-8");
 		
 		
 		String threadname = req.getParameter("threadname");
@@ -30,7 +33,12 @@ public class CreateThreadServlet extends HttpServlet{
 		String id = CreateThread.DoCreateThread(threadname,theme,description,username,title,text);
 		
 		
-		RequestDispatcher dis= req.getRequestDispatcher("/home");
+		List<ThreadListProfile> tlist = listQuery.getQueryList(theme);
+		
+		req.setAttribute("themeA",theme);
+		req.setAttribute("users",tlist);
+		
+		RequestDispatcher dis= req.getRequestDispatcher("/threadlistoutput");
 		
 		dis.forward(req,res);
 	

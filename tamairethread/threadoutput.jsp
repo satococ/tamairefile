@@ -44,7 +44,7 @@
 					<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
 					<div class="panel">
 						<ul style="list-style: none;">
-							<li><a href="index.html">Return TOP</a></li>
+							<li><a href="index.jsp">Return TOP</a></li>
 						</ul>
 						<ul id="sns">
 							<li><a href="#" target="_blank"><img src="images/iconFb.png" width="20" height="20" alt="FB"></a></li>
@@ -58,10 +58,8 @@
 		</div>
 		
 		<!--投稿画面のタイムライン-->
-		<div class="Rog" style="padding: 10px 10px 10px 10px;background-color:#ffffff;">
-			<h2>投稿一覧</h2>
-			<p>投稿はまだありません</p>
-				<h1>スレッド一覧</h1>
+		<div class="Rog" style="padding: 10px 10px 10px 10px;background-color:#000000;">
+			<h2>スレッド一覧</h2>
 	<table border="1">
 		<tr><th>スレッド名</th><th>最終更新</th><th>見出し</th><th>閲覧数</th><th>URL</th></tr>
 		<c:forEach var="prof" items="${users}">
@@ -71,11 +69,47 @@
 		</div>
 		<!--投稿画面・TL投稿編集-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
-			<form method='post' action='' style="width: 300px; height: 300px; ">		<!--formのJava参照パスを指定-->
-				名前:<br><input type="text" name="name"  value=""><br>
-			    本文:<br><textarea name="message" class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300字以内で入力してください。"></textarea><br>
-				<br><a class="button" input type="submit" href="#">つぶやく！</a>
-			</form>
+	<c:if test="${themeA==0}">
+		<p>スポーツにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==1}">
+		<p>悩み・相談にスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==2}">
+		<p>料理・グルメにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==3}">
+		<p>旅行・観光にスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==4}">
+		<p>ゲームにスレッドを作成</p>
+	</c:if>
+	<c:if test="${themeA==5}">
+		<p>動物・自然にスレッドを作成</p>
+	</c:if>
+			<form method='post' action='Create'>
+	スレッド名<input type='text' name='threadname'>
+	<br>
+	スレッド見出し<input type='text' name='description'>
+	<br>
+	ユーザー名<input type='text' name='username'>
+	<br>
+	タイトル<input type='text' name='title'>
+	<br>
+	本文<input type='text' name='text'>
+	<br>
+	
+	<input type="hidden" name = 'theme' value = "${themeA}">
+	<%-- <select name="theme">
+	<option value=0>スポーツ</option>
+	<option value=1>悩み・相談</option>
+	<option value=2>料理・グルメ</option>
+	<option value=3>旅行・観光</option>
+	<option value=4>ゲーム</option>
+	<option value=5>動物・自然</option>
+	</select>
+	--%>
+	<input type='submit' value='作成'>
 		</div>
 	</div>
 

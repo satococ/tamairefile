@@ -9,16 +9,16 @@ import java.util.List;
 import info.resProfile;
 import database.InsertTest;
 import database.QueryTest;
+import database.NameQuery;
 
 public class TamaireThread extends HttpServlet{
 	
 	public void doPost(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
 		
-		res.setContentType("text/html; charset=UTF-8");
 		//パラメータを受け取る
 		//文字コード固定
-		req.setCharacterEncoding("Windows-31J");
+		req.setCharacterEncoding("UTF-8");
 		
 		
 		//String threadid = req.getParameter("threadid");
@@ -32,6 +32,10 @@ public class TamaireThread extends HttpServlet{
 	//データベースからリストをもらう
 		List<resProfile> pLIst = QueryTest.getQueryList(id);
 		
+		
+		String threadname = NameQuery.getQueryName(id);
+		
+		req.setAttribute("name",threadname);
 		
 	//パラメータをJSPに投稿する
 		
@@ -47,15 +51,19 @@ public class TamaireThread extends HttpServlet{
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws IOException,ServletException{
 		
 		res.setContentType("text/html; charset=UTF-8");
-		//パラメータを受け取る
 		//文字コード固定
-		req.setCharacterEncoding("Windows-31J");
+		//パラメータを受け取る
+		req.setCharacterEncoding("UTF-8");
 		
 		String rno = req.getParameter("rno");
 		
 	//データベースからリストをもらう
 		List<resProfile> pLIst = QueryTest.getQueryList(rno);
 		
+		
+		String threadname = NameQuery.getQueryName(rno);
+		
+		req.setAttribute("name",threadname);
 		
 	//パラメータをJSPに投稿する
 		
