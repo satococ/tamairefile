@@ -36,228 +36,228 @@
 		a:active, a:focus,input:active, input:focus{outline:0;}
 	</style>
 		<!--投稿画面のタイムライン-->
-		<div class="container">
-			<header class="clearfix">
-				<span><a href="index.jsp" style="color: #ff69b4;">←TOP</a></span>
-				<h1>THREAD LIST</h1>
-				<nav>
-					<a href="" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
-					<a href="" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
-				</nav>
-			</header>	
-			<div class="main" style="margin: 0px;">
-				<ul class="cbp_tmtimeline">
-				
-			<c:forEach var="prof" items="${users}">
+	<div class="container">
+		<header class="clearfix">
+			<span><a href="index.jsp" style="color: #ffa500;">←TOP</a></span>
+			<h1>THREAD LIST</h1>
+			<nav>
+				<a href="" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
+				<a href="" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
+			</nav>
+		</header>	
+		<div class="main" style="margin: 0px;">
+			<ul class="cbp_tmtimeline">
+				<c:forEach var="prof" items="${users}">
 					<li>
-					 
 						<time class="cbp_tmtime" datetime="">
-						<c:forTokens items="${prof.update}" delims=" " var="timea"><span>${timea}</span></c:forTokens>
-						 </time>
-						
+							<c:forTokens items="${prof.update}" delims=" " var="timea">
+								<span>${timea}</span>
+							</c:forTokens>
+						</time>
 						<div class="cbp_tmicon cbp_tmicon-phone"></div>
 						<div class="cbp_tmlabel">
-							<a href="/tama/tamaire?rno=${prof.threadid}&theme=${themeA}"><h2>${prof.name}</h2>
-							<p>${prof.description}</p></a>
+							<a href="/tama/tamaire?rno=${prof.threadid}&theme=${themeA}">
+								<h2>${prof.name}</h2>
+								<p>${prof.description}</p>
+							</a>
 						</div>
 					</li>
-					
 				</c:forEach>
-				</ul>
-			</div>
+			</ul>
 		</div>
-		<style>
+	</div>
+	<style>
 		font-face {
-				font-family: 'ecoico';
-				src:url('../fonts/timelineicons/ecoico.eot');
-				src:url('../fonts/timelineicons/ecoico.eot?#iefix') format('embedded-opentype'),
-					url('../fonts/timelineicons/ecoico.woff') format('woff'),
-					url('../fonts/timelineicons/ecoico.ttf') format('truetype'),
-					url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
-				font-weight: normal;
-				font-style: normal;
-			} /* Made with http://icomoon.io/ */
+			font-family: 'ecoico';
+			src:url('../fonts/timelineicons/ecoico.eot');
+			src:url('../fonts/timelineicons/ecoico.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/timelineicons/ecoico.woff') format('woff'),
+			url('../fonts/timelineicons/ecoico.ttf') format('truetype'),
+			url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		} /* Made with http://icomoon.io/ */
+		
+		.cbp_tmtimeline {
+			margin: 0px;
+			padding: 0;
+			left: 2%;
+			list-style: none;
+			position: relative;
+		} 
 
-			.cbp_tmtimeline {
-				margin: 0px;
-				padding: 0;
-				left: 2%;
-				list-style: none;
-				position: relative;
-			} 
+		/*--------------------スレッドの縦線--------------------*/
+		.cbp_tmtimeline:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 10px;
+			background: #afdcf8;
+			left: 20%;
+			margin-left: -10px;
+		}
 
-			/* The line */
+		/*--------------------タイムラインの時間と日付の位置付け--------------------*/
+		.cbp_tmtimeline > li .cbp_tmtime {
+			display: block;
+			left: -3%; 
+			width: 20%;
+			padding-right: 100px;
+			position: absolute;
+		}
+
+		.cbp_tmtimeline > li .cbp_tmtime span {
+			display: block;
+			text-align: right;
+		}
+		/*--------------------スレッド作成画面の作成日付--------------------*/
+		.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+			font-size: 0.9em;
+			color: #00ffff;
+		}
+		/*--------------------スレッド作成画面の作成時間１--------------------*/
+		.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+			font-size: 2.9em;
+			color: #00ffff;
+		}
+		/*--------------------スレッド作成画面の作成時間２--------------------*/
+		.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+			color: #00ffff;
+		}
+
+		/* Right content */
+		.cbp_tmtimeline > li .cbp_tmlabel {
+			margin: 0 0 15px 25%;
+			background: #3594cb;
+			color: #fff;
+			padding: 2em;
+			font-size: 1.2em;
+			font-weight: 300;
+			line-height: 1.4;
+			position: relative;
+			border-radius: 5px;
+		}
+		/*--------------------スレッド（タイトルとか書いてあるとこ）の背景--------------------*/
+		.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+			background: #46a4da;
+		}
+
+		.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+			margin-top: 0px;
+			padding: 0 0 10px 0;
+			border-bottom: 1px solid rgba(255,255,255,0.4);
+		}
+
+		/* The triangle */
+		.cbp_tmtimeline > li .cbp_tmlabel:after {
+			right: 100%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-right-color: #3594cb;
+			border-width: 10px;
+			top: 10px;
+		}
+		/*--------------------タイムラインの矢印--------------------*/
+		.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+			border-right-color: #46a4da;
+		}
+
+		/*--------------------スレッドの横のバー-------------------- */
+		.cbp_tmtimeline > li .cbp_tmicon {
+			width: 40px;
+			height: 40px;
+			font-family: 'ecoico';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			font-size: 1.4em;
+			line-height: 40px;
+			-webkit-font-smoothing: antialiased;
+			position: absolute;
+			color: #fff;
+			background: #46a4da;
+			border-radius: 50%;
+			box-shadow: 0 0 0 8px #afdcf8;
+			text-align: center;
+			left: 20%;
+			top: 0;
+			margin: 0 0 0 -25px;
+		}
+
+		.cbp_tmicon-phone:before {
+			content: "\e000";
+		}
+
+		.cbp_tmicon-screen:before {
+			content: "\e001";
+		}
+
+		.cbp_tmicon-mail:before {
+			content: "\e002";
+		}
+
+		.cbp_tmicon-earth:before {
+			content: "\e003";
+		}
+
+		/* Example Media Queries */
+		@media screen and (max-width: 65.375em) {
+			.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+				font-size: 1.5em;
+			}
+		}
+
+		@media screen and (max-width: 47.2em) {
 			.cbp_tmtimeline:before {
-				content: '';
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				width: 10px;
-				background: #afdcf8;
-				left: 20%;
-				margin-left: -10px;
+				display: none;
 			}
 
-			/* The date/time */
 			.cbp_tmtimeline > li .cbp_tmtime {
-				display: block;
-				width: 5%;
-				padding-right: 100px;
-				position: absolute;
+				width: 100%;
+				position: relative;
+				padding: 0 0 20px 0;
 			}
 
 			.cbp_tmtimeline > li .cbp_tmtime span {
-				display: block;
-				text-align: right;
+				text-align: left;
 			}
 
-			.cbp_tmtimeline > li .cbp_tmtime span:first-child {
-				font-size: 0.9em;
-				color: #bdd0db;
-			}
-
-			.cbp_tmtimeline > li .cbp_tmtime span:last-child {
-				font-size: 2.9em;
-				color: #3594cb;
-			}
-
-			.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-				color: #6cbfee;
-			}
-
-			/* Right content */
 			.cbp_tmtimeline > li .cbp_tmlabel {
-				margin: 0 0 15px 25%;
-				background: #3594cb;
-				color: #fff;
-				padding: 2em;
-				font-size: 1.2em;
-				font-weight: 300;
-				line-height: 1.4;
-				position: relative;
-				border-radius: 5px;
+				margin: 0 0 30px 0;
+				padding: 1em;
+				font-weight: 400;
+				font-size: 95%;
 			}
 
-			.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-				background: #6cbfee;
-			}
-
-			.cbp_tmtimeline > li .cbp_tmlabel h2 { 
-				margin-top: 0px;
-				padding: 0 0 10px 0;
-				border-bottom: 1px solid rgba(255,255,255,0.4);
-			}
-
-			/* The triangle */
 			.cbp_tmtimeline > li .cbp_tmlabel:after {
-				right: 100%;
-				border: solid transparent;
-				content: " ";
-				height: 0;
-				width: 0;
-				position: absolute;
-				pointer-events: none;
-				border-right-color: #3594cb;
-				border-width: 10px;
-				top: 10px;
+				right: auto;
+				left: 20px;
+				border-right-color: transparent;
+				border-bottom-color: #3594cb;
+				top: -20px;
 			}
 
 			.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-				border-right-color: #6cbfee;
+				border-right-color: transparent;
+				border-bottom-color: #6cbfee;
 			}
 
-			/* The icons */
 			.cbp_tmtimeline > li .cbp_tmicon {
-				width: 40px;
-				height: 40px;
-				font-family: 'ecoico';
-				speak: none;
-				font-style: normal;
-				font-weight: normal;
-				font-variant: normal;
-				text-transform: none;
-				font-size: 1.4em;
-				line-height: 40px;
-				-webkit-font-smoothing: antialiased;
-				position: absolute;
-				color: #fff;
-				background: #46a4da;
-				border-radius: 50%;
-				box-shadow: 0 0 0 8px #afdcf8;
-				text-align: center;
-				left: 20%;
-				top: 0;
-				margin: 0 0 0 -25px;
-			}
-
-			.cbp_tmicon-phone:before {
-				content: "\e000";
-			}
-
-			.cbp_tmicon-screen:before {
-				content: "\e001";
-			}
-
-			.cbp_tmicon-mail:before {
-				content: "\e002";
-			}
-
-			.cbp_tmicon-earth:before {
-				content: "\e003";
-			}
-
-			/* Example Media Queries */
-			@media screen and (max-width: 65.375em) {
-
-				.cbp_tmtimeline > li .cbp_tmtime span:last-child {
-					font-size: 1.5em;
-				}
-			}
-
-			@media screen and (max-width: 47.2em) {
-				.cbp_tmtimeline:before {
-					display: none;
-				}
-
-				.cbp_tmtimeline > li .cbp_tmtime {
-					width: 100%;
-					position: relative;
-					padding: 0 0 20px 0;
-				}
-
-				.cbp_tmtimeline > li .cbp_tmtime span {
-					text-align: left;
-				}
-
-				.cbp_tmtimeline > li .cbp_tmlabel {
-					margin: 0 0 30px 0;
-					padding: 1em;
-					font-weight: 400;
-					font-size: 95%;
-				}
-
-				.cbp_tmtimeline > li .cbp_tmlabel:after {
-					right: auto;
-					left: 20px;
-					border-right-color: transparent;
-					border-bottom-color: #3594cb;
-					top: -20px;
-				}
-
-				.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-					border-right-color: transparent;
-					border-bottom-color: #6cbfee;
-				}
-
-				.cbp_tmtimeline > li .cbp_tmicon {
-					position: relative;
-					float: right;
-					left: auto;
-					margin: -55px 5px 0 0px;
-				}	
-			}
-		</style>
-		<style>
+				position: relative;
+				float: right;
+				left: auto;
+				margin: -55px 5px 0 0px;
+			}	
+		}
+	</style>
+	<style>
 			/* General Blueprint Style */
 			@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 			@font-face {
@@ -310,6 +310,7 @@
 				margin: 0;
 				float: left;
 				font-weight: 400;
+			    color: #00ffff;
 			}
 
 			.container > header span {
@@ -390,56 +391,49 @@
 		</style>
 		<!--投稿画面・TL投稿編集-->
 		<div class="Toukou" style="width: 350px; height: 350px;">
-		<c:if test="${themeA==0}">
-			<p>スポーツにスレッドを作成</p>
-		</c:if>
-		<c:if test="${themeA==1}">
-		<p>悩み・相談にスレッドを作成</p>
-	</c:if>
-	<c:if test="${themeA==2}">
-		<p>料理・グルメにスレッドを作成</p>
-	</c:if>
-	<c:if test="${themeA==3}">
-		<p>旅行・観光にスレッドを作成</p>
-	</c:if>
-	<c:if test="${themeA==4}">
-		<p>ゲームにスレッドを作成</p>
-	</c:if>
-	<c:if test="${themeA==5}">
-		<p>動物・自然にスレッドを作成</p>
-	</c:if>
+			<c:if test="${themeA==0}">
+				<p>スポーツにスレッドを作成</p>
+			</c:if>
+			<c:if test="${themeA==1}">
+				<p>悩み・相談にスレッドを作成</p>
+			</c:if>
+			<c:if test="${themeA==2}">
+				<p>料理・グルメにスレッドを作成</p>
+			</c:if>
+			<c:if test="${themeA==3}">
+				<p>旅行・観光にスレッドを作成</p>
+			</c:if>
+			<c:if test="${themeA==4}">
+				<p>ゲームにスレッドを作成</p>
+			</c:if>
+			<c:if test="${themeA==5}">
+				<p>動物・自然にスレッドを作成</p>
+			</c:if>
 			<form method='post' action='Create' style="width: 300px; height: 300px; ">		<!--formのJava参照パスを指定-->
 				スレッド名:<br><input type='text' name='threadname'><br>
 				スレッド見出し:<br><input type='text' name='description'><br>
 				ユーザー名:<br><input type='text' name='username'>
 				<br>
-				タイトル:<br><input type='text' name='title'>
+				タイトル:<br><input type='text' name='title' max-length='20'>
 				<br>
 			    本文:<br><textarea name='text'class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300字以内で入力してください。"></textarea><br>
 				<input type="hidden" name = 'theme' value = "${themeA}">
-				<br><a class="button" input type="submit" >つぶやく！</a>
+				<br><!--<a class="button" input type="submit" >つぶやく！</a>-->
 				<input class="button" type='submit' value='スレッド作成！'>
 			</form>
 		</div>
 	</div>
 
 		<style>
-			.Rog{	/* ーーータイムライン範囲指定ーーー */
-			top: 100px;
-			left: 2%;
-			width: 50%;
-			height: 500px;
-			position: relative;
-			margin: 0;
-			}
-		
 			.Toukou{	/* ーーー投稿の範囲指定ーーー */
-			top: 40%;
+			top: 15%;
 			left: 80%;
 			float:left;
 			position: absolute;
 			margin: 0;
+			color: #00ffff;
 			}
+			
 			.button {
 			  position: relative;
 			  display: inline-block;

@@ -40,7 +40,7 @@ public class InsertTest{
 			String today=null;
 			Calendar cal=Calendar.getInstance();
 			Date date=cal.getTime();
-			SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			SimpleDateFormat formatter=new SimpleDateFormat("yy-MM-dd HH:mm:ss");
 			today=formatter.format(date);
 			
 			//no—p

@@ -101,7 +101,8 @@
 			/* The date/time */
 			.cbp_tmtimeline > li .cbp_tmtime {
 				display: block;
-				width: 5%;
+				left: -3%; 
+				width: 20%;
 				padding-right: 100px;
 				position: absolute;
 			}
@@ -113,16 +114,16 @@
 
 			.cbp_tmtimeline > li .cbp_tmtime span:first-child {
 				font-size: 0.9em;
-				color: #bdd0db;
+			color: #00ffff;
 			}
 
 			.cbp_tmtimeline > li .cbp_tmtime span:last-child {
 				font-size: 2.9em;
-				color: #3594cb;
+			color: #00ffff;
 			}
 
 			.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-				color: #6cbfee;
+			color: #00ffff;
 			}
 
 			/* Right content */
@@ -310,6 +311,7 @@
 				margin: 0;
 				float: left;
 				font-weight: 400;
+				color: #00ffff;
 			}
 
 			.container > header span {
@@ -388,14 +390,14 @@
 				content: "\f060";
 			}
 		</style>
-		<!--投稿画面・TL投稿編集-->
+		
 		<div class="Toukou" style="width: 350px; height: 350px;">
 				<form method='post' action='tamaire' style="width: 300px; height: 300px; ">		<!--formのJava参照パスを指定-->
 				ユーザー名:<br><input type='text' name='username'><br>
 				タイトル:<br><input type='text' name='title'><br>
 			    本文:<br><textarea name='text' class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300字以内で入力してください。"></textarea><br>
 				<input type="hidden" name = 'id' value = "${users[0].threadid}">
-				<br><a class="button" input type="submit" href="#">つぶやく！</a>
+				<br><!--投稿画面・TL投稿編集<a class="button" input type="submit" href="#">つぶやく！</a>-->
 				<br>
 				<input class="button" type='submit' value='つぶやく！'>
 				
@@ -419,6 +421,7 @@
 			float:left;
 			position: absolute;
 			margin: 0;
+			color: #00ffff;
 			}
 			.button {
 			  position: relative;
