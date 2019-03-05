@@ -397,6 +397,8 @@
 				タイトル:<br><input type='text' name='title'><br>
 			    本文:<br><textarea name='text' class="honbun" name="honbun" cols="30" rows="10" minlength="" wrap="hard" placeholder="300字以内で入力してください。"></textarea><br>
 				<input type="hidden" name = 'id' value = "${users[0].threadid}">
+				<input type="hidden" name = 'theme' value = "${themeA}">
+				
 				<br><!--投稿画面・TL投稿編集<a class="button" input type="submit" href="#">つぶやく！</a>-->
 				<br>
 				<input class="button" type='submit' value='つぶやく！'>

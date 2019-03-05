@@ -29,7 +29,19 @@ public class TamaireThread extends HttpServlet{
 		String id = req.getParameter("id");
 		
 		String theme = req.getParameter("theme");
+		
+		if(username==null||username.length()==0){
+			throw new ServletException("名前に入力内容がありません",null);
+		}
+		if(title==null||title.length()==0){
+			throw new ServletException("タイトルに入力内容がありません",null);
+		}
+		if(title==null||title.length()==0){
+			throw new ServletException("タイトルに入力内容がありません",null);
+		}
 			//データベースに書き込む
+		
+		
 		String altertext = kaigyou.Kaigyou(text);
 		
 		InsertTest.insertUser_Table(id,username, title,altertext);

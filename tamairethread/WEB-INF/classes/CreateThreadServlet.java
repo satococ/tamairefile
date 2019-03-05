@@ -30,6 +30,22 @@ public class CreateThreadServlet extends HttpServlet{
 		String title = req.getParameter("title");
 		String text = req.getParameter("text");
 		
+		if(threadname==null||threadname.length()==0){
+			throw new ServletException("スレッドタイトルに入力内容がありません",null);
+		}
+		if(description==null||description.length()==0){
+			throw new ServletException("スレッド見出しに入力内容がありません",null);
+		}
+		if(username==null||username.length()==0){
+			throw new ServletException("名前に入力内容がありません",null);
+		}
+		if(title==null||title.length()==0){
+			throw new ServletException("タイトルに入力内容がありません",null);
+		}
+		if(title==null||title.length()==0){
+			throw new ServletException("タイトルに入力内容がありません",null);
+		}
+		
 		String id = CreateThread.DoCreateThread(threadname,theme,description,username,title,text);
 		
 		

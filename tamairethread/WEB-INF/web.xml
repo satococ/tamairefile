@@ -72,5 +72,10 @@
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
+
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/nocontent.jsp</location>
+	</error-page>
 	
 </web-app>
